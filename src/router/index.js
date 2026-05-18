@@ -4,7 +4,6 @@ import Home from '../pages/Home.vue'
 import Catalog from '../pages/Catalog.vue'
 import AboutUs from '../pages/AboutUs.vue'
 import HowToOrder from '../pages/HowToOrder.vue'
-import DetailProduk from '../pages/DetailProduk.vue'
 
 const routes = [
   {
@@ -22,10 +21,6 @@ const routes = [
   {
     path: '/how-to-order',
     component: HowToOrder,
-  },
-  {
-    path: '/detail-produk',
-    component: DetailProduk,
   },
 ]
 

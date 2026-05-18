@@ -6,9 +6,9 @@
 
             <div class="flex items-center gap-md lg:gap-lg">
                 <nav class="hidden md:flex gap-md items-center">
-                    <router-link to="/" class="text-primary border-b-2 border-primary font-label-md text-label-md py-1">Home</router-link>
-                    <router-link to="/catalog" class="text-on-surface-variant font-label-md text-label-md hover:bg-surface-container transition-colors px-3 py-1 rounded-lg">Catalog</router-link>
-                    <router-link to="/about-us" class="text-on-surface-variant font-label-md text-label-md hover:bg-surface-container transition-colors px-3 py-1 rounded-lg">About Us</router-link>
+                    <router-link to="/" :class="['font-label-md text-label-md py-1 px-3 transition-colors border-b-2', $route.path === '/' ? 'text-primary border-primary' : 'text-on-surface-variant border-transparent hover:bg-surface-container rounded-lg']">Home</router-link>
+                    <router-link to="/catalog" :class="['font-label-md text-label-md py-1 px-3 transition-colors border-b-2', $route.path.startsWith('/catalog') ? 'text-primary border-primary' : 'text-on-surface-variant border-transparent hover:bg-surface-container rounded-lg']">Catalog</router-link>
+                    <router-link to="/about-us" :class="['font-label-md text-label-md py-1 px-3 transition-colors border-b-2', $route.path.startsWith('/about-us') ? 'text-primary border-primary' : 'text-on-surface-variant border-transparent hover:bg-surface-container rounded-lg']">About Us</router-link>
                 </nav>
 
                 <div class="flex items-center gap-xs relative">
@@ -50,9 +50,9 @@
                     <!-- Mobile Menu Hamburger -->
                     <button
                         @click="isMobileMenuOpen = !isMobileMenuOpen"
-                        class="md:hidden material-symbols-outlined text-primary p-2 rounded-full hover:bg-surface-container transition-colors cursor-pointer"
+                        class="md:hidden text-primary p-2 rounded-full hover:bg-surface-container transition-colors cursor-pointer flex items-center justify-center"
                     >
-                        {{ isMobileMenuOpen ? 'close' : 'menu' }}
+                        <span class="material-symbols-outlined">{{ isMobileMenuOpen ? 'close' : 'menu' }}</span>
                     </button>
                 </div>
             </div>
@@ -63,16 +63,16 @@
             :class="{ active: isMobileMenuOpen }"
             id="mobile-menu">
             <div class="flex flex-col p-margin-mobile gap-base">
-                <router-link to="/" @click="isMobileMenuOpen = false" class="flex items-center gap-md p-md rounded-xl bg-primary-container/10 text-primary font-label-md">
+                <router-link to="/" @click="isMobileMenuOpen = false" :class="['flex items-center gap-md p-md rounded-xl font-label-md', $route.path === '/' ? 'bg-primary-container/10 text-primary' : 'hover:bg-surface-container text-on-surface-variant']">
                     <span class="material-symbols-outlined">home</span> Home
                 </router-link>
-                <router-link to="/catalog" @click="isMobileMenuOpen = false" class="flex items-center gap-md p-md rounded-xl hover:bg-surface-container text-on-surface-variant font-label-md">
+                <router-link to="/catalog" @click="isMobileMenuOpen = false" :class="['flex items-center gap-md p-md rounded-xl font-label-md', $route.path.startsWith('/catalog') ? 'bg-primary-container/10 text-primary' : 'hover:bg-surface-container text-on-surface-variant']">
                     <span class="material-symbols-outlined">grid_view</span> Catalog
                 </router-link>
-                <router-link to="/about-us" @click="isMobileMenuOpen = false" class="flex items-center gap-md p-md rounded-xl hover:bg-surface-container text-on-surface-variant font-label-md">
+                <router-link to="/about-us" @click="isMobileMenuOpen = false" :class="['flex items-center gap-md p-md rounded-xl font-label-md', $route.path.startsWith('/about-us') ? 'bg-primary-container/10 text-primary' : 'hover:bg-surface-container text-on-surface-variant']">
                     <span class="material-symbols-outlined">info</span> About Us
                 </router-link>
-                <router-link to="/how-to-order" @click="isMobileMenuOpen = false" class="flex items-center gap-md p-md rounded-xl hover:bg-surface-container text-on-surface-variant font-label-md">
+                <router-link to="/how-to-order" @click="isMobileMenuOpen = false" :class="['flex items-center gap-md p-md rounded-xl font-label-md', $route.path.startsWith('/how-to-order') ? 'bg-primary-container/10 text-primary' : 'hover:bg-surface-container text-on-surface-variant']">
                     <span class="material-symbols-outlined">help_outline</span> How to Order
                 </router-link>
                 
