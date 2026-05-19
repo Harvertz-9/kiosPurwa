@@ -125,7 +125,7 @@ const filteredProducts = computed(() => {
                                     <button
                                         class="w-full bg-primary text-on-primary font-label-md py-3 rounded-xl flex items-center justify-center gap-sm hover:opacity-90 active:scale-[0.98] transition-all">
                                         <span class="material-symbols-outlined text-[20px]"
-                                            data-icon="visibility">visibility</span> Lihat Detail
+                                            data-icon="visibility">visibility</span> Hubungi kami
                                     </button>
                                 </div>
                             </div>
