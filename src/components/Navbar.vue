@@ -1,14 +1,15 @@
 <template>
     <header class="bg-surface docked full-width top-0 sticky z-40 shadow-sm border-b border-surface-container-highest">
         <div
-            class="flex justify-between items-center w-full px-margin-mobile md:px-gutter max-w-[1440px] mx-auto h-16 relative z-50 bg-surface">
+            class="flex justify-between items-center w-full px-margin-mobile md:px-gutter max-w-360 mx-auto h-16 relative z-50 bg-surface">
             <div class="font-headline-md text-headline-md font-bold text-primary tracking-tight">KIOS PURWA</div>
 
             <div class="flex items-center gap-md lg:gap-lg">
                 <nav class="hidden md:flex gap-md items-center">
-                    <router-link to="/" :class="['font-label-md text-label-md py-1 px-3 transition-colors border-b-2', $route.path === '/' ? 'text-primary border-primary' : 'text-on-surface-variant border-transparent hover:bg-surface-container rounded-lg']">Home</router-link>
-                    <router-link to="/catalog" :class="['font-label-md text-label-md py-1 px-3 transition-colors border-b-2', $route.path.startsWith('/catalog') ? 'text-primary border-primary' : 'text-on-surface-variant border-transparent hover:bg-surface-container rounded-lg']">Catalog</router-link>
-                    <router-link to="/about-us" :class="['font-label-md text-label-md py-1 px-3 transition-colors border-b-2', $route.path.startsWith('/about-us') ? 'text-primary border-primary' : 'text-on-surface-variant border-transparent hover:bg-surface-container rounded-lg']">About Us</router-link>
+                    <router-link to="/" :class="['font-label-md text-label-md py-1 px-3 transition-colors border-b-2', $route.path === '/' ? 'text-primary border-primary' : 'text-on-surface-variant border-transparent hover:bg-surface-container rounded-lg']">{{ t('home') }}</router-link>
+                    <router-link to="/catalog" :class="['font-label-md text-label-md py-1 px-3 transition-colors border-b-2', $route.path.startsWith('/catalog') ? 'text-primary border-primary' : 'text-on-surface-variant border-transparent hover:bg-surface-container rounded-lg']">{{ t('catalog') }}</router-link>
+                    <router-link to="/about-us" :class="['font-label-md text-label-md py-1 px-3 transition-colors border-b-2', $route.path.startsWith('/about-us') ? 'text-primary border-primary' : 'text-on-surface-variant border-transparent hover:bg-surface-container rounded-lg']">{{ t('aboutUs') }}</router-link>
+                    <router-link to="/how-to-order" :class="['font-label-md text-label-md py-1 px-3 transition-colors border-b-2', $route.path.startsWith('/how-to-order') ? 'text-primary border-primary' : 'text-on-surface-variant border-transparent hover:bg-surface-container rounded-lg']">{{ t('howToOrder') }}</router-link>
                 </nav>
 
                 <div class="flex items-center gap-xs relative">
@@ -33,7 +34,7 @@
                                 class="w-full text-left px-4 py-2.5 text-sm flex items-center justify-between hover:bg-surface-container transition-colors cursor-pointer"
                                 :class="currentLanguage === 'id' ? 'text-primary font-bold bg-primary/5' : 'text-on-surface-variant'"
                             >
-                                <span>Bahasa Indonesia</span>
+                                <span>{{ t('bahasaIndonesia') }}</span>
                                 <span v-if="currentLanguage === 'id'" class="material-symbols-outlined text-sm font-bold text-primary">check</span>
                             </button>
                             <button 
@@ -41,7 +42,7 @@
                                 class="w-full text-left px-4 py-2.5 text-sm flex items-center justify-between hover:bg-surface-container transition-colors cursor-pointer"
                                 :class="currentLanguage === 'en' ? 'text-primary font-bold bg-primary/5' : 'text-on-surface-variant'"
                             >
-                                <span>English</span>
+                                <span>{{ t('english') }}</span>
                                 <span v-if="currentLanguage === 'en'" class="material-symbols-outlined text-sm font-bold text-primary">check</span>
                             </button>
                         </div>
@@ -64,35 +65,35 @@
             id="mobile-menu">
             <div class="flex flex-col p-margin-mobile gap-base">
                 <router-link to="/" @click="isMobileMenuOpen = false" :class="['flex items-center gap-md p-md rounded-xl font-label-md', $route.path === '/' ? 'bg-primary-container/10 text-primary' : 'hover:bg-surface-container text-on-surface-variant']">
-                    <span class="material-symbols-outlined">home</span> Home
+                    <span class="material-symbols-outlined">home</span> {{ t('home') }}
                 </router-link>
                 <router-link to="/catalog" @click="isMobileMenuOpen = false" :class="['flex items-center gap-md p-md rounded-xl font-label-md', $route.path.startsWith('/catalog') ? 'bg-primary-container/10 text-primary' : 'hover:bg-surface-container text-on-surface-variant']">
-                    <span class="material-symbols-outlined">grid_view</span> Catalog
+                    <span class="material-symbols-outlined">grid_view</span> {{ t('catalog') }}
                 </router-link>
                 <router-link to="/about-us" @click="isMobileMenuOpen = false" :class="['flex items-center gap-md p-md rounded-xl font-label-md', $route.path.startsWith('/about-us') ? 'bg-primary-container/10 text-primary' : 'hover:bg-surface-container text-on-surface-variant']">
-                    <span class="material-symbols-outlined">info</span> About Us
+                    <span class="material-symbols-outlined">info</span> {{ t('aboutUs') }}
                 </router-link>
                 <router-link to="/how-to-order" @click="isMobileMenuOpen = false" :class="['flex items-center gap-md p-md rounded-xl font-label-md', $route.path.startsWith('/how-to-order') ? 'bg-primary-container/10 text-primary' : 'hover:bg-surface-container text-on-surface-variant']">
-                    <span class="material-symbols-outlined">help_outline</span> How to Order
+                    <span class="material-symbols-outlined">help_outline</span> {{ t('howToOrder') }}
                 </router-link>
                 
                 <!-- Mobile Language Selector Section -->
                 <div class="border-t border-surface-container-highest pt-md mt-sm">
-                    <span class="text-xs font-bold text-on-surface-variant uppercase tracking-wider block px-md mb-xs">Pilih Bahasa / Language</span>
+                    <span class="text-xs font-bold text-on-surface-variant uppercase tracking-wider block px-md mb-xs">{{ t('languageSelectorLabel') }}</span>
                     <div class="flex gap-sm p-sm">
                         <button 
                             @click="selectLanguage('id')"
                             class="flex-1 py-2 px-md rounded-xl text-center font-label-md text-label-md transition-all cursor-pointer"
                             :class="currentLanguage === 'id' ? 'bg-primary text-on-primary shadow-sm' : 'bg-surface-container text-on-surface-variant'"
                         >
-                            Indonesia
+                            {{ t('bahasaIndonesia') }}
                         </button>
                         <button 
                             @click="selectLanguage('en')"
                             class="flex-1 py-2 px-md rounded-xl text-center font-label-md text-label-md transition-all cursor-pointer"
                             :class="currentLanguage === 'en' ? 'bg-primary text-on-primary shadow-sm' : 'bg-surface-container text-on-surface-variant'"
                         >
-                            English
+                            {{ t('english') }}
                         </button>
                     </div>
                 </div>
@@ -102,14 +103,17 @@
 </template>
 
 <script setup>
-import { ref } from 'vue'
+import { ref, computed } from 'vue'
+import { useI18n } from '../i18n'
 
+const { locale, t, setLocale } = useI18n()
 const isMobileMenuOpen = ref(false)
 const isLangMenuOpen = ref(false)
-const currentLanguage = ref('id')
+const currentLanguage = computed(() => locale.value)
 
 const selectLanguage = (lang) => {
-    currentLanguage.value = lang
+    setLocale(lang)
     isLangMenuOpen.value = false
+    isMobileMenuOpen.value = false
 }
 </script>

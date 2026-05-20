@@ -1,6 +1,8 @@
 <script setup lang="ts">
 import Navbar from '../components/Navbar.vue';
 import Footer from '../components/Footer.vue';
+import { useI18n } from '../i18n'
+const { t } = useI18n()
 </script>
 
 <template>
@@ -10,10 +12,9 @@ import Footer from '../components/Footer.vue';
         <main class="max-w-container-max mx-auto px-margin-mobile md:px-gutter py-xl">
             <!-- Hero Section -->
             <section class="mb-xl text-center">
-                <h1 class="font-headline-xl text-headline-xl text-on-surface mb-md">Langkah Mudah Berbelanja</h1>
+                <h1 class="font-headline-xl text-headline-xl text-on-surface mb-md">{{ t('orderStepsTitle') }}</h1>
                 <p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl mx-auto">
-                    Nikmati kemudahan berbelanja produk lokal pilihan dengan sentuhan personal melalui layanan WhatsApp
-                    kami.
+                    {{ t('orderStepsDescription') }}
                 </p>
             </section>
             <!-- Visual Grid: Steps -->
@@ -25,9 +26,9 @@ import Footer from '../components/Footer.vue';
                         class="w-16 h-16 bg-surface-container-lowest rounded-full flex items-center justify-center mb-md shadow-sm">
                         <span class="material-symbols-outlined text-primary text-3xl" data-icon="search">search</span>
                     </div>
-                    <h3 class="font-headline-md text-headline-md text-primary mb-sm">1. Pilih Produk</h3>
+                    <h3 class="font-headline-md text-headline-md text-primary mb-sm">{{ t('step1Title') }}</h3>
                     <p class="font-body-md text-body-md text-on-secondary-container">
-                        Jelajahi katalog kami dan tentukan produk kerajinan atau kuliner favorit Anda.
+                        {{ t('step1Description') }}
                     </p>
                 </div>
                 <!-- Step 2 -->
@@ -37,9 +38,9 @@ import Footer from '../components/Footer.vue';
                         class="w-16 h-16 bg-surface-container-lowest rounded-full flex items-center justify-center mb-md shadow-sm">
                         <span class="material-symbols-outlined text-primary text-3xl" data-icon="chat">chat</span>
                     </div>
-                    <h3 class="font-headline-md text-headline-md text-primary mb-sm">2. Klik WhatsApp</h3>
+                    <h3 class="font-headline-md text-headline-md text-primary mb-sm">{{ t('step2Title') }}</h3>
                     <p class="font-body-md text-body-md text-on-secondary-container">
-                        Klik tombol "Chat with Seller" untuk terhubung langsung dengan tim kami.
+                        {{ t('step2Description') }}
                     </p>
                 </div>
                 <!-- Step 3 -->
@@ -50,9 +51,9 @@ import Footer from '../components/Footer.vue';
                         <span class="material-symbols-outlined text-primary text-3xl"
                             data-icon="support_agent">support_agent</span>
                     </div>
-                    <h3 class="font-headline-md text-headline-md text-primary mb-sm">3. Konsultasi &amp; Stok</h3>
+                    <h3 class="font-headline-md text-headline-md text-primary mb-sm">{{ t('step3Title') }}</h3>
                     <p class="font-body-md text-body-md text-on-secondary-container">
-                        Kami akan memastikan ketersediaan stok dan menjawab detail pertanyaan Anda.
+                        {{ t('step3Description') }}
                     </p>
                 </div>
                 <!-- Step 4 -->
@@ -63,68 +64,54 @@ import Footer from '../components/Footer.vue';
                         <span class="material-symbols-outlined text-primary text-3xl"
                             data-icon="local_shipping">local_shipping</span>
                     </div>
-                    <h3 class="font-headline-md text-headline-md text-primary mb-sm">4. Pembayaran</h3>
+                    <h3 class="font-headline-md text-headline-md text-primary mb-sm">{{ t('step4Title') }}</h3>
                     <p class="font-body-md text-body-md text-on-secondary-container">
-                        Selesaikan pembayaran aman dan pesanan akan segera kami kirim ke alamat Anda.
+                        {{ t('step4Description') }}
                     </p>
                 </div>
             </section>
             <!-- Featured Visual -->
             <section class="mb-xl">
-                <div class="relative w-full h-[400px] rounded-xl overflow-hidden shadow-sm">
+                <div class="relative w-full h-100 rounded-xl overflow-hidden shadow-sm">
                     <img class="w-full h-full object-cover"
                         data-alt="A warm and inviting customer service scene where a local artisan is smiling while interacting with a smartphone. The background shows a cozy, minimalist Indonesian craft workshop with soft natural lighting and warm beige tones. The atmosphere conveys trust, digital craftsmanship, and professional approachability, reflecting a premium boutique service aesthetic."
                         src="https://lh3.googleusercontent.com/aida-public/AB6AXuCCvfapEKVcL_nx9A3XKGChRrXgQs0ETG0w6yTHEmA35pt7B8G655i3X5-d5BUCUtYfzufAVje5hUSB7ZNKHglxMDcvRAz-VrjUgLE-rTA0E0J7JFr4vz3-o4mkq__EDV_Xow7Qz-TL4ZRbthk8_WrBnUEADwboErRGRSfWmPEQZ7THXrWFcM3jNQWMdT0qgLfHNNGxC5UhhqgCRNmv5iBKF4TBspDoZvb-L2KzgCp7YVhLb_SrLdqf3cAY6CdsGvnfW4JfxfoG-pFj" />
                     <div
                         class="absolute inset-0 bg-linear-to-r from-primary/40 to-transparent flex items-center px-lg">
                         <div class="max-w-2xl bg-surface/90 backdrop-blur-sm p-md rounded-lg">
-                            <h2 class="font-headline-lg text-headline-lg text-primary mb-sm">Pendekatan Personal</h2>
-                            <p class="font-body-md text-body-md text-on-surface-variant">Kami percaya setiap pesanan
-                                adalah awal dari silaturahmi. Chat with Seller on WhatsApp untuk pengalaman belanja yang
-                                lebih hangat.</p>
+                            <h2 class="font-headline-lg text-headline-lg text-primary mb-sm">{{ t('personalApproachTitle') }}</h2>
+                            <p class="font-body-md text-body-md text-on-surface-variant">{{ t('personalApproachDescription') }}</p>
                         </div>
                     </div>
                 </div>
             </section>
             <!-- FAQ Section -->
             <section class="bg-surface-container-low rounded-xl p-lg">
-                <h2 class="font-headline-lg text-headline-lg text-on-surface mb-lg text-center">Frequently Asked
-                    Questions</h2>
+                <h2 class="font-headline-lg text-headline-lg text-on-surface mb-lg text-center">{{ t('faqTitle') }}</h2>
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-md">
                     <!-- FAQ Item 1 -->
                     <div
                         class="bg-surface-container-lowest p-md rounded-lg shadow-[0_2px_10px_rgba(81,99,78,0.03)] border border-outline-variant/20">
-                        <h4 class="font-headline-md text-headline-md text-primary text-[18px] mb-base">Berapa lama waktu
-                            pengiriman?</h4>
-                        <p class="font-body-md text-body-md text-on-surface-variant">Pengiriman reguler biasanya memakan
-                            waktu 2-4 hari kerja tergantung lokasi Anda. Kami akan memberikan nomor resi segera setelah
-                            barang dikirim.</p>
+                        <h4 class="font-headline-md text-headline-md text-primary text-[18px] mb-base">{{ t('faqDeliveryQuestion') }}</h4>
+                        <p class="font-body-md text-body-md text-on-surface-variant">{{ t('faqDeliveryAnswer') }}</p>
                     </div>
                     <!-- FAQ Item 2 -->
                     <div
                         class="bg-surface-container-lowest p-md rounded-lg shadow-[0_2px_10px_rgba(81,99,78,0.03)] border border-outline-variant/20">
-                        <h4 class="font-headline-md text-headline-md text-primary text-[18px] mb-base">Metode pembayaran
-                            apa yang tersedia?</h4>
-                        <p class="font-body-md text-body-md text-on-surface-variant">Kami menerima transfer bank antar
-                            bank lokal serta dompet digital utama seperti GoPay dan OVO untuk kenyamanan Anda.</p>
+                        <h4 class="font-headline-md text-headline-md text-primary text-[18px] mb-base">{{ t('faqPaymentQuestion') }}</h4>
+                        <p class="font-body-md text-body-md text-on-surface-variant">{{ t('faqPaymentAnswer') }}</p>
                     </div>
                     <!-- FAQ Item 3 -->
                     <div
                         class="bg-surface-container-lowest p-md rounded-lg shadow-[0_2px_10px_rgba(81,99,78,0.03)] border border-outline-variant/20">
-                        <h4 class="font-headline-md text-headline-md text-primary text-[18px] mb-base">Apakah bisa retur
-                            jika barang rusak?</h4>
-                        <p class="font-body-md text-body-md text-on-surface-variant">Ya, kami menjamin kualitas produk
-                            kami. Silakan sertakan video unboxing dan hubungi admin WhatsApp kami dalam 1x24 jam setelah
-                            barang diterima.</p>
+                        <h4 class="font-headline-md text-headline-md text-primary text-[18px] mb-base">{{ t('faqReturnQuestion') }}</h4>
+                        <p class="font-body-md text-body-md text-on-surface-variant">{{ t('faqReturnAnswer') }}</p>
                     </div>
                     <!-- FAQ Item 4 -->
                     <div
                         class="bg-surface-container-lowest p-md rounded-lg shadow-[0_2px_10px_rgba(81,99,78,0.03)] border border-outline-variant/20">
-                        <h4 class="font-headline-md text-headline-md text-primary text-[18px] mb-base">Dapatkan
-                            konsultasi produk gratis?</h4>
-                        <p class="font-body-md text-body-md text-on-surface-variant">Tentu! Tim kami siap membantu
-                            memberikan rekomendasi produk yang sesuai dengan kebutuhan atau dekorasi rumah Anda melalui
-                            WhatsApp.</p>
+                        <h4 class="font-headline-md text-headline-md text-primary text-[18px] mb-base">{{ t('faqFreeConsultationQuestion') }}</h4>
+                        <p class="font-body-md text-body-md text-on-surface-variant">{{ t('faqFreeConsultationAnswer') }}</p>
                     </div>
                 </div>
             </section>
