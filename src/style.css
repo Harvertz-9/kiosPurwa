@@ -1,12 +1,8 @@
-@import "tailwindcss";
-
 @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap');
 
-@theme {
-   /* =========================
-     COLORS
-  ========================= */
+@import "tailwindcss";
 
+@theme {
    --color-surface-tint: #51634e;
    --color-secondary: #615e57;
    --color-surface-bright: #faf9f6;
@@ -55,18 +51,10 @@
    --color-primary: #51634e;
    --color-on-surface-variant: #434841;
 
-   /* =========================
-     BORDER RADIUS
-  ========================= */
-
    --radius: 0.25rem;
    --radius-lg: 0.5rem;
    --radius-xl: 0.75rem;
    --radius-full: 9999px;
-
-   /* =========================
-     SPACING
-  ========================= */
 
    --spacing-md: 24px;
    --spacing-container-max: 1200px;
@@ -78,10 +66,6 @@
    --spacing-xs: 4px;
    --spacing-lg: 48px;
 
-   /* =========================
-     FONT FAMILY
-  ========================= */
-
    --font-headline-xl: "Plus Jakarta Sans", sans-serif;
    --font-label-md: "Plus Jakarta Sans", sans-serif;
    --font-headline-lg-mobile: "Plus Jakarta Sans", sans-serif;
@@ -90,10 +74,6 @@
    --font-body-lg: "Plus Jakarta Sans", sans-serif;
    --font-body-md: "Plus Jakarta Sans", sans-serif;
    --font-headline-lg: "Plus Jakarta Sans", sans-serif;
-
-   /* =========================
-     FONT SIZE
-  ========================= */
 
    --text-headline-xl: 40px;
    --text-headline-xl--line-height: 48px;
@@ -140,7 +120,6 @@ body {
    color: #1a1c1a;
 }
 
-/* Mobile Menu Animation */
 #mobile-menu {
    transition: transform 0.3s ease-in-out;
    transform: translateY(-100%);

@@ -10,16 +10,13 @@ const { t } = useI18n()
     <body class="font-body-md text-body-md selection:bg-primary-fixed selection:text-on-primary-fixed">
         <Navbar />
         <main class="max-w-container-max mx-auto px-margin-mobile md:px-gutter py-xl">
-            <!-- Hero Section -->
             <section class="mb-xl text-center">
                 <h1 class="font-headline-xl text-headline-xl text-on-surface mb-md">{{ t('orderStepsTitle') }}</h1>
                 <p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl mx-auto">
                     {{ t('orderStepsDescription') }}
                 </p>
             </section>
-            <!-- Visual Grid: Steps -->
             <section class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-gutter mb-xl">
-                <!-- Step 1 -->
                 <div
                     class="bg-secondary-container p-md rounded-xl flex flex-col items-center text-center group transition-transform duration-200 active:scale-95">
                     <div
@@ -31,7 +28,6 @@ const { t } = useI18n()
                         {{ t('step1Description') }}
                     </p>
                 </div>
-                <!-- Step 2 -->
                 <div
                     class="bg-surface-container-high p-md rounded-xl flex flex-col items-center text-center group transition-transform duration-200 active:scale-95">
                     <div
@@ -43,7 +39,6 @@ const { t } = useI18n()
                         {{ t('step2Description') }}
                     </p>
                 </div>
-                <!-- Step 3 -->
                 <div
                     class="bg-secondary-container p-md rounded-xl flex flex-col items-center text-center group transition-transform duration-200 active:scale-95">
                     <div
@@ -70,7 +65,6 @@ const { t } = useI18n()
                     </p>
                 </div>
             </section>
-            <!-- Featured Visual -->
             <section class="mb-xl">
                 <div class="relative w-full h-100 rounded-xl overflow-hidden shadow-sm">
                     <img class="w-full h-full object-cover"
@@ -85,29 +79,24 @@ const { t } = useI18n()
                     </div>
                 </div>
             </section>
-            <!-- FAQ Section -->
             <section class="bg-surface-container-low rounded-xl p-lg">
                 <h2 class="font-headline-lg text-headline-lg text-on-surface mb-lg text-center">{{ t('faqTitle') }}</h2>
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-md">
-                    <!-- FAQ Item 1 -->
                     <div
                         class="bg-surface-container-lowest p-md rounded-lg shadow-[0_2px_10px_rgba(81,99,78,0.03)] border border-outline-variant/20">
                         <h4 class="font-headline-md text-headline-md text-primary text-[18px] mb-base">{{ t('faqDeliveryQuestion') }}</h4>
                         <p class="font-body-md text-body-md text-on-surface-variant">{{ t('faqDeliveryAnswer') }}</p>
                     </div>
-                    <!-- FAQ Item 2 -->
                     <div
                         class="bg-surface-container-lowest p-md rounded-lg shadow-[0_2px_10px_rgba(81,99,78,0.03)] border border-outline-variant/20">
                         <h4 class="font-headline-md text-headline-md text-primary text-[18px] mb-base">{{ t('faqPaymentQuestion') }}</h4>
                         <p class="font-body-md text-body-md text-on-surface-variant">{{ t('faqPaymentAnswer') }}</p>
                     </div>
-                    <!-- FAQ Item 3 -->
                     <div
                         class="bg-surface-container-lowest p-md rounded-lg shadow-[0_2px_10px_rgba(81,99,78,0.03)] border border-outline-variant/20">
                         <h4 class="font-headline-md text-headline-md text-primary text-[18px] mb-base">{{ t('faqReturnQuestion') }}</h4>
                         <p class="font-body-md text-body-md text-on-surface-variant">{{ t('faqReturnAnswer') }}</p>
                     </div>
-                    <!-- FAQ Item 4 -->
                     <div
                         class="bg-surface-container-lowest p-md rounded-lg shadow-[0_2px_10px_rgba(81,99,78,0.03)] border border-outline-variant/20">
                         <h4 class="font-headline-md text-headline-md text-primary text-[18px] mb-base">{{ t('faqFreeConsultationQuestion') }}</h4>
@@ -116,7 +105,6 @@ const { t } = useI18n()
                 </div>
             </section>
         </main>
-
         <Footer />
     </body>
 </template>

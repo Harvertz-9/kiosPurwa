@@ -35,18 +35,9 @@ const filteredProducts = computed(() => {
 <template>
 
     <body class="bg-background text-on-background font-body-md overflow-x-hidden">
-        <!-- TopAppBar -->
         <Navbar />
         <main class="mx-auto px-margin-mobile md:px-gutter py-md max-w-360 pt-16">
-            <!-- Hero Section / Title -->
-            <!-- <section class="mb-lg">
-                <h1 class="font-headline-xl text-headline-xl text-primary mb-xs">Katalog Produk</h1>
-                <p class="font-body-lg text-body-lg text-secondary max-w-2xl">Temukan kurasi produk kerajinan dan
-                    kebutuhan lokal terbaik dengan sentuhan Digital Craftsmanship.</p>
-            </section> -->
-            <!-- Layout Container -->
             <div class="flex flex-col lg:flex-row gap-lg">
-                <!-- Filter Sidebar / Horizontal Mobile Scroll -->
                 <aside class="w-full lg:w-64 shrink-0">
                     <div class="lg:sticky lg:top-24 space-y-md">
                         <div class="flex flex-col gap-md">
@@ -101,7 +92,6 @@ const filteredProducts = computed(() => {
                         </div>
                     </div>
                 </aside>
-                <!-- Product Grid -->
                 <div class="grow">
                     <div v-if="filteredProducts.length === 0" class="flex flex-col items-center justify-center text-on-surface-variant py-2xl font-body-lg gap-4 bg-surface-container-low rounded-xl border border-dashed border-outline-variant">
                         <span class="material-symbols-outlined text-4xl text-outline">inventory_2</span>
