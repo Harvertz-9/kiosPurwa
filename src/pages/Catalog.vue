@@ -2,10 +2,8 @@
 import Navbar from '../components/Navbar.vue';
 import Footer from '../components/Footer.vue';
 import { ref, computed } from 'vue';
-import { useI18n } from '../i18n'
 import { categories, products } from '../data/product.js';
 
-const { t } = useI18n()
 const selectedCategory = ref('Semua');
 const selectedPrices = ref([]);
 
@@ -71,21 +69,21 @@ const filteredProducts = computed(() => {
                                         <input
                                             class="rounded border-outline-variant text-primary focus:ring-primary h-5 w-5"
                                             type="checkbox" v-model="selectedPrices" value="0-50000" />
-                                        <span class="group-hover:text-primary transition-colors">{{ t('priceBelow50k') }}</span>
+                                        <span class="group-hover:text-primary transition-colors">Rp0 - 50rb</span>
                                     </label>
                                     <label
                                         class="flex items-center gap-sm font-body-md cursor-pointer group bg-surface-container-low lg:bg-transparent px-4 py-2 lg:p-0 rounded-full lg:rounded-none border border-outline-variant lg:border-none shrink-0">
                                         <input
                                             class="rounded border-outline-variant text-primary focus:ring-primary h-5 w-5"
                                             type="checkbox" v-model="selectedPrices" value="50000-200000" />
-                                        <span class="group-hover:text-primary transition-colors">{{ t('price50k200k') }}</span>
+                                        <span class="group-hover:text-primary transition-colors">50rb - 200rb</span>
                                     </label>
                                     <label
                                         class="flex items-center gap-sm font-body-md cursor-pointer group bg-surface-container-low lg:bg-transparent px-4 py-2 lg:p-0 rounded-full lg:rounded-none border border-outline-variant lg:border-none shrink-0">
                                         <input
                                             class="rounded border-outline-variant text-primary focus:ring-primary h-5 w-5"
                                             type="checkbox" v-model="selectedPrices" value="200000-Infinity" />
-                                        <span class="group-hover:text-primary transition-colors">{{ t('priceAbove200k') }}</span>
+                                        <span class="group-hover:text-primary transition-colors">> 200rb</span>
                                     </label>
                                 </div>
                             </div>
@@ -95,7 +93,7 @@ const filteredProducts = computed(() => {
                 <div class="grow">
                     <div v-if="filteredProducts.length === 0" class="flex flex-col items-center justify-center text-on-surface-variant py-2xl font-body-lg gap-4 bg-surface-container-low rounded-xl border border-dashed border-outline-variant">
                         <span class="material-symbols-outlined text-4xl text-outline">inventory_2</span>
-                        {{ t('catalogNoResults') }}
+                        Tidak ada produk dalam kategori ini.
                     </div>
                     <div v-else
                         class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 xl:grid-cols-3 2xl:grid-cols-4 gap-gutter">
@@ -117,7 +115,7 @@ const filteredProducts = computed(() => {
                                     <button
                                         class="w-full bg-primary text-on-primary font-label-md py-3 rounded-xl flex items-center justify-center gap-sm hover:opacity-90 active:scale-[0.98] transition-all">
                                         <span class="material-symbols-outlined text-[20px]"
-                                            data-icon="visibility">visibility</span> {{ t('contactButtonText') }}
+                                            data-icon="visibility">visibility</span> Hubungi kami
                                     </button>
                                 </div>
                             </div>

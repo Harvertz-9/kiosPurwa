@@ -1,8 +1,6 @@
 <script setup>
 import Navbar from '../components/Navbar.vue'
 import Footer from '../components/Footer.vue'
-import { useI18n } from '../i18n'
-const { t } = useI18n()
 </script>
 
 <template>
@@ -14,22 +12,26 @@ const { t } = useI18n()
                 <div class="flex flex-col lg:flex-row items-center gap-lg">
                     <div class="w-full lg:w-1/2 space-y-md text-center lg:text-left order-2 lg:order-1">
                         <span
-                            class="inline-block px-3 py-1 rounded-full bg-secondary-fixed text-on-secondary-fixed-variant font-label-sm text-label-sm">{{ t('heroBadge') }}</span>
+                            class="inline-block px-3 py-1 rounded-full bg-secondary-fixed text-on-secondary-fixed-variant font-label-sm text-label-sm">Pendukung Produk Lokal</span>
                         <h1
                             class="font-headline-lg-mobile md:font-headline-xl text-headline-lg-mobile md:text-headline-xl text-on-surface leading-tight">
-                            {{ t('heroTitle') }}</h1>
+                            Mendekatkan Karya UMKM ke Genggaman Anda.</h1>
                         <p
                             class="text-body-md md:text-body-lg text-on-surface-variant max-w-5xl">
-                            {{ t('heroSubtitle') }}</p>
+                            Kios Purwa hadir sebagai jembatan digital bagi pengrajin dan produsen lokal Indonesia untuk menghadirkan produk berkualitas dengan sentuhan personal.</p>
                         <div class="flex flex-col sm:flex-row flex-wrap justify-center lg:justify-start gap-sm pt-base">
+                            <router-link to="/catalog">
                             <button
                                 class="bg-primary text-on-primary px-lg py-3 rounded-xl font-label-md text-label-md flex items-center justify-center gap-2 hover:opacity-90 active:scale-95 transition-all w-full sm:w-auto">
-                                {{ t('viewCatalogProducts') }}
+                                Lihat Katalog Produk
                             </button>
+                            </router-link>
+                            <router-link to="/about-us">
                             <button
                                 class="border border-outline-variant text-on-surface-variant px-lg py-3 rounded-xl font-label-md text-label-md hover:bg-surface-container-low transition-colors w-full sm:w-auto">
-                                {{ t('aboutUsShort') }}
+                                Tentang Kami
                             </button>
+                            </router-link>
                         </div>
                     </div>
                     <div class="w-full lg:w-1/2 relative order-1 lg:order-2">
@@ -56,12 +58,12 @@ const { t } = useI18n()
                 <div class="px-margin-mobile md:px-gutter max-w-360 mx-auto">
                     <div class="flex flex-col sm:flex-row justify-between items-start sm:items-end mb-lg gap-sm">
                         <div class="space-y-xs">
-                            <h2 class="font-headline-lg text-headline-lg text-on-surface">{{ t('featuredCategories') }}</h2>
-                            <p class="text-on-surface-variant font-body-md text-body-md">{{ t('featuredCategoriesDescription') }}</p>
+                            <h2 class="font-headline-lg text-headline-lg text-on-surface">Kategori Unggulan</h2>
+                            <p class="text-on-surface-variant font-body-md text-body-md">Temukan produk terbaik hasil kurasi teliti.</p>
                         </div>
                         <a class="text-primary font-label-md text-label-md hover:underline flex items-center gap-1"
                             href="#">
-                            {{ t('seeAll') }} <span class="material-symbols-outlined text-[18px]">chevron_right</span>
+                            Lihat Semua <span class="material-symbols-outlined text-[18px]">chevron_right</span>
                         </a>
                     </div>
                     <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-md md:gap-lg">
@@ -74,8 +76,8 @@ const { t } = useI18n()
                             <div
                                 class="absolute inset-0 bg-linear-to-t from-black/80 via-black/20 to-transparent flex items-end p-md">
                                 <div class="text-white">
-                                    <h3 class="font-headline-md text-headline-md">{{ t('crafts') }}</h3>
-                                    <p class="font-label-md text-label-md opacity-90">{{ t('craftsCaption') }}</p>
+                                    <h3 class="font-headline-md text-headline-md">Kerajinan</h3>
+                                    <p class="font-label-md text-label-md opacity-90">Produk tangan eksklusif</p>
                                 </div>
                             </div>
                         </div>
@@ -88,8 +90,8 @@ const { t } = useI18n()
                             <div
                                 class="absolute inset-0 bg-linear-to-t from-black/80 via-black/20 to-transparent flex items-end p-md">
                                 <div class="text-white">
-                                    <h3 class="font-headline-md text-headline-md">{{ t('food') }}</h3>
-                                    <p class="font-label-md text-label-md opacity-90">{{ t('foodCaption') }}</p>
+                                    <h3 class="font-headline-md text-headline-md">Makanan</h3>
+                                    <p class="font-label-md text-label-md opacity-90">Cita rasa asli Nusantara</p>
                                 </div>
                             </div>
                         </div>
@@ -102,8 +104,8 @@ const { t } = useI18n()
                             <div
                                 class="absolute inset-0 bg-linear-to-t from-black/80 via-black/20 to-transparent flex items-end p-md">
                                 <div class="text-white">
-                                    <h3 class="font-headline-md text-headline-md">{{ t('clothing') }}</h3>
-                                    <p class="font-label-md text-label-md opacity-90">{{ t('clothingCaption') }}</p>
+                                    <h3 class="font-headline-md text-headline-md">Pakaian</h3>
+                                    <p class="font-label-md text-label-md opacity-90">Gaya modern budaya lokal</p>
                                 </div>
                             </div>
                         </div>
@@ -116,7 +118,7 @@ const { t } = useI18n()
                         class="bg-primary-container/10 md:bg-primary-container/20 rounded-4xl md:rounded-[40px] p-md md:p-xl flex flex-col lg:flex-row items-center gap-lg">
                         <div class="w-full lg:w-1/2">
                             <h2 class="font-headline-lg text-headline-lg text-primary mb-md text-center lg:text-left">
-                                {{ t('easyShoppingTitle') }}</h2>
+                                Belanja Lebih Mudah & Personal</h2>
                             <div class="space-y-md">
                                 <div
                                     class="flex flex-col sm:flex-row items-center sm:items-start gap-md text-center sm:text-left">
@@ -125,9 +127,9 @@ const { t } = useI18n()
                                         <span class="material-symbols-outlined">chat</span>
                                     </div>
                                     <div>
-                                        <h4 class="font-label-md text-label-md text-on-surface">{{ t('directOrder') }}
+                                        <h4 class="font-label-md text-label-md text-on-surface">Pesan Langsung lewat WA
                                         </h4>
-                                        <p class="font-body-md text-body-md text-on-surface-variant">{{ t('noAccount') }}</p>
+                                        <p class="font-body-md text-body-md text-on-surface-variant">Tidak perlu ribet daftar akun. Hubungi penjual langsung dan konsultasikan pesanan Anda secara personal.</p>
                                     </div>
                                 </div>
                                 <div
@@ -137,8 +139,8 @@ const { t } = useI18n()
                                         <span class="material-symbols-outlined">verified_user</span>
                                     </div>
                                     <div>
-                                        <h4 class="font-label-md text-label-md text-on-surface">{{ t('verifiedUMKM') }}</h4>
-                                        <p class="font-body-md text-body-md text-on-surface-variant">{{ t('verifiedUMKMDescription') }}</p>
+                                        <h4 class="font-label-md text-label-md text-on-surface">UMKM Terverifikasi</h4>
+                                        <p class="font-body-md text-body-md text-on-surface-variant">Seluruh mitra di platform kami telah melalui proses kurasi untuk memastikan kualitas produk terbaik.</p>
                                     </div>
                                 </div>
                                 <div
@@ -148,8 +150,8 @@ const { t } = useI18n()
                                         <span class="material-symbols-outlined">local_shipping</span>
                                     </div>
                                     <div>
-                                        <h4 class="font-label-md text-label-md text-on-surface">{{ t('deliveryAllIndonesia') }}</h4>
-                                        <p class="font-body-md text-body-md text-on-surface-variant">{{ t('deliveryAllIndonesiaDescription') }}</p>
+                                        <h4 class="font-label-md text-label-md text-on-surface">Pengiriman Seluruh Indonesia</h4>
+                                        <p class="font-body-md text-body-md text-on-surface-variant">Pilihan ekspedisi yang fleksibel dan aman hingga ke depan pintu rumah Anda.</p>
                                     </div>
                                 </div>
                             </div>
@@ -157,7 +159,7 @@ const { t } = useI18n()
                                 <a class="inline-flex items-center justify-center gap-2 bg-primary text-on-primary px-lg py-4 rounded-xl font-label-md text-label-md shadow-md hover:shadow-lg active:scale-95 transition-all w-full sm:w-auto"
                                     href="#">
                                     <span class="material-symbols-outlined">add_shopping_cart</span>
-                                    {{ t('startShoppingNow') }}
+                                    Mulai Belanja Sekarang
                                 </a>
                             </div>
                         </div>
@@ -171,7 +173,7 @@ const { t } = useI18n()
                                 </div>
                                 <div
                                     class="absolute -top-4 right-2 sm:-right-4 bg-tertiary text-on-tertiary px-4 md:px-lg py-2 rounded-full font-label-sm text-label-sm shadow-lg">
-                                    {{ t('chatWithSellerOnWhatsApp') }}
+                                    Chat with Seller on WhatsApp
                                 </div>
                             </div>
                         </div>
@@ -183,8 +185,8 @@ const { t } = useI18n()
                     <div class="flex flex-col lg:flex-row gap-lg items-stretch">
                         <div class="w-full lg:w-1/2 space-y-md flex flex-col justify-center order-2 lg:order-1">
                             <div class="space-y-xs text-center lg:text-left">
-                                <h2 class="font-headline-lg text-headline-lg text-on-surface">{{ t('ourLocation') }}</h2>
-                                <p class="text-on-surface-variant font-body-md text-body-md">{{ t('ourLocationDescription') }}</p>
+                                <h2 class="font-headline-lg text-headline-lg text-on-surface">Lokasi Kami</h2>
+                                <p class="text-on-surface-variant font-body-md text-body-md">Kunjungi pusat kreasi kami untuk melihat langsung proses pembuatan dan koleksi lengkap produk UMKM terbaik.</p>
                             </div>
                             <div class="space-y-sm pt-md">
                                 <div
@@ -192,8 +194,8 @@ const { t } = useI18n()
                                     <span
                                         class="material-symbols-outlined text-primary bg-primary/10 p-2 rounded-full">location_on</span>
                                     <div>
-                                        <h4 class="font-label-md text-label-md text-on-surface">{{ t('address') }}</h4>
-                                        <p class="font-body-md text-body-md text-on-surface-variant">{{ t('addressValue') }}</p>
+                                        <h4 class="font-label-md text-label-md text-on-surface">Alamat</h4>
+                                        <p class="font-body-md text-body-md text-on-surface-variant">Jl. Lettu Wayan Suta, Sukawati, Gianyar, Bali, Indonesia</p>
                                     </div>
                                 </div>
                                 <div
@@ -201,8 +203,8 @@ const { t } = useI18n()
                                     <span
                                         class="material-symbols-outlined text-primary bg-primary/10 p-2 rounded-full">schedule</span>
                                     <div>
-                                        <h4 class="font-label-md text-label-md text-on-surface">{{ t('operationalHours') }}</h4>
-                                        <p class="font-body-md text-body-md text-on-surface-variant">{{ t('hoursValue') }}</p>
+                                        <h4 class="font-label-md text-label-md text-on-surface">Jam Operasional</h4>
+                                        <p class="font-body-md text-body-md text-on-surface-variant">Senin - Sabtu: 09.00 - 18.00 WIB</p>
                                     </div>
                                 </div>
                             </div>

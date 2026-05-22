@@ -1,9 +1,7 @@
 <script setup>
   import Navbar from '../components/Navbar.vue';
   import Footer from '../components/Footer.vue';
-  import { useI18n } from '../i18n'
-  const { t } = useI18n()
-</script>
+    </script>
 
 <template>
   <div class="bg-surface text-on-surface min-h-screen pb-2xl">
@@ -21,11 +19,11 @@
     <div class="px-margin-mobile md:px-gutter max-w-360 mx-auto pt-xl md:pt-2xl flex flex-col gap-2xl md:gap-30">
       <section class="grid grid-cols-1 md:grid-cols-2 gap-xl md:gap-2xl items-center">
         <div class="flex flex-col gap-md md:gap-lg md:pr-xl">
-          <span class="text-primary font-label-md tracking-widest uppercase">{{ t('aboutSectionTitle') }}</span>
-          <h2 class="font-headline-lg text-3xl md:text-5xl text-on-surface font-bold leading-tight">{{ t('aboutUsHeading') }}</h2>
+          <span class="text-primary font-label-md tracking-widest uppercase">TENTANG KAMI</span>
+          <h2 class="font-headline-lg text-3xl md:text-5xl text-on-surface font-bold leading-tight">Kesenian yang Berakar pada Komunitas</h2>
           <div class="font-body-md text-on-surface-variant flex flex-col gap-md text-base md:text-lg leading-relaxed mt-sm">
-            <p>{{ t('aboutDescription1') }}</p>
-            <p>{{ t('aboutDescription2') }}</p>
+            <p>KIOS PURWA lahir dari keinginan sederhana: memberikan panggung yang layak bagi para pengrajin lokal. Kami percaya bahwa setiap produk memiliki jiwa, dan setiap guratan tangan adalah cerita tentang dedikasi yang tak lekang oleh waktu.</p>
+            <p>Dengan pendekatan 'Minimalisme Digital', kami menghadirkan nuansa alam ke ruang yang tenang, simetris dan jujur di pasar tradisional yang ramah bagi semua dengan efisiensi teknologi masa kini.</p>
           </div>
         </div>
         <div class="rounded-3xl overflow-hidden aspect-4/3 md:aspect-square bg-surface-container">
@@ -95,14 +93,14 @@
         <span class="font-label-lg text-primary font-bold">- Pak Santosa, Pengrajin Kayu Jati</span>
       </section>
       <section class="flex flex-col items-center justify-center text-center gap-lg py-xl">
-        <h2 class="font-headline-md text-2xl font-bold text-on-surface">{{ t('wantToKnowMore') }}</h2>
+        <h2 class="font-headline-md text-2xl font-bold text-on-surface">Ingin tahu lebih banyak?</h2>
         <div class="flex flex-col sm:flex-row gap-md">
           <button class="bg-[#25D366] text-white px-xl py-3.5 rounded-full font-label-lg flex items-center justify-center gap-2 hover:bg-[#1ebd5a] transition-colors shadow-sm">
             <span class="material-symbols-outlined">chat</span>
-            {{ t('contactUsButton') }}
+            Chat with Seller on WhatsApp
           </button>
           <router-link to="/catalog" class="border border-outline text-on-surface px-xl py-3.5 rounded-full font-label-lg flex items-center justify-center hover:bg-surface-container transition-colors">
-            {{ t('viewCatalogButton') }}
+            Lihat Katalog Produk
           </router-link>
         </div>
       </section>
@@ -111,25 +109,25 @@
           <img src="https://placehold.co/800x600/e6e4dc/5a6b58?text=Lokasi+Kios+Purwa" alt="Lokasi KIOS PURWA" class="w-full h-full object-cover">
         </div>
         <div class="flex flex-col gap-lg p-xl md:p-2xl md:pr-3xl">
-          <h2 class="font-headline-lg text-3xl font-bold text-on-surface">{{ t('ourLocation') }}</h2>
+          <h2 class="font-headline-lg text-3xl font-bold text-on-surface">Lokasi Kami</h2>
           <p class="font-body-md text-on-surface-variant text-lg">
-            {{ t('ourLocationDescription') }}
+            Kunjungi pusat kreasi kami untuk melihat langsung proses pembuatan dan koleksi lengkap produk UMKM terbaik.
           </p>
           
           <div class="flex flex-col gap-lg mt-sm">
             <div class="flex items-start gap-md">
               <span class="material-symbols-outlined text-primary text-[28px]">location_on</span>
               <div class="flex flex-col gap-1">
-                <div class="font-label-lg font-bold text-on-surface">{{ t('address') }}</div>
-                <div class="font-body-md text-on-surface-variant">{{ t('addressValue') }}</div>
+                <div class="font-label-lg font-bold text-on-surface">Alamat</div>
+                <div class="font-body-md text-on-surface-variant">Jl. Lettu Wayan Suta, Sukawati, Gianyar, Bali, Indonesia</div>
               </div>
             </div>
             
             <div class="flex items-start gap-md">
               <span class="material-symbols-outlined text-primary text-[28px]">schedule</span>
               <div class="flex flex-col gap-1">
-                <div class="font-label-lg font-bold text-on-surface">{{ t('operationalHours') }}</div>
-                <div class="font-body-md text-on-surface-variant">{{ t('hoursValue') }}</div>
+                <div class="font-label-lg font-bold text-on-surface">Jam Operasional</div>
+                <div class="font-body-md text-on-surface-variant">Senin - Sabtu: 09.00 - 18.00 WIB</div>
               </div>
             </div>
           </div>
@@ -137,7 +135,7 @@
           <div class="pt-md mt-sm border-t border-surface-container-highest">
             <button class="border border-outline text-on-surface px-lg py-2.5 rounded-full font-label-md flex items-center gap-2 hover:bg-surface-container transition-colors w-fit">
               <span class="material-symbols-outlined text-[20px]">directions</span>
-              {{ t('directions') }}
+              Petunjuk Arah
             </button>
           </div>
         </div>
