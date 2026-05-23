@@ -9,7 +9,7 @@
             <div class="space-y-sm w-full lg:w-1/3 pr-0 lg:pr-8">
                 <div class="notranslate font-headline-md text-headline-md font-bold text-primary">KIOS PURWA</div>
                 <p class="text-body-md text-on-secondary-container leading-relaxed">
-                    Kios Purwa adalah platform digital terkurasi untuk produk unggulan UMKM Sleman, Yogyakarta, menghadirkan kerajinan tradisional, busana lokal, dan cita rasa kuliner nusantara langsung ke genggaman Anda.
+                    “Kios Purwa adalah UMKM yang berlokasi di Pasar Sukawati, Bali, yang menyediakan berbagai produk khas Bali seperti tas handmade, pakaian tradisional maupun modern, serta aneka pernak-pernik dan kerajinan seni Bali dengan kualitas baik dan harga terjangkau.”
                 </p>
                 <p class="text-xs text-on-secondary-container/80 pt-base">
                     © 2024 KIOS PURWA.<br />Crafted for UMKM Excellence.
@@ -44,11 +44,13 @@
                 <h5 class="text-body-md text-on-secondary-container font-bold uppercase tracking-wider">
                     Hubungi Kami</h5>
                 <div class="flex items-center gap-sm">
-                    <a class="w-12 h-12 rounded-full bg-primary text-on-primary flex items-center justify-center hover:opacity-90 transition-opacity shadow-sm"
-                        href="https://wa.me/628123456789" target="_blank" rel="noopener noreferrer" title="Hubungi Kami via WhatsApp">
-                        <span class="material-symbols-outlined text-[20px]">call</span>
+                    <a class="flex items-center gap-5" href="https://wa.me/628123456789" target="_blank" rel="noopener noreferrer" title="Hubungi Kami via WhatsApp">
+                        <div class="w-12 h-12 rounded-full bg-primary text-on-primary flex items-center justify-center hover:opacity-90 transition-opacity shadow-sm"
+                            >
+                            <span class="material-symbols-outlined text-[20px]">call</span>
+                        </div>
+                        <p>+62 812-3456-7890</p>
                     </a>
-                    <p>+62 812-3456-7890</p>
                 </div>
             </div>
         </div>

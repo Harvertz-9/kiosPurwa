@@ -9,7 +9,7 @@
     <!-- Hero Section -->
     <section class="relative w-full h-[60vh] md:h-[80vh] bg-surface-container flex items-center justify-center overflow-hidden">
       <!-- Background Image Placeholder -->
-      <img src="https://placehold.co/1920x1080/4a5b48/FFF?text=Pottery+Making" alt="Hero Background" class="absolute inset-0 w-full h-full object-cover opacity-70 mix-blend-overlay">
+      <img src="/images/about/about_hero.png" alt="Hero Background" class="absolute inset-0 w-full h-full object-cover opacity-70 mix-blend-overlay">
       <div class="absolute inset-0 bg-black/50"></div>
       <div class="relative z-10 flex flex-col items-center text-center px-margin-mobile md:px-gutter max-w-200 gap-md">
         <h1 class="text-white font-headline-lg text-4xl md:text-6xl font-bold tracking-tight">Kisah di Balik KIOS PURWA</h1>
@@ -22,12 +22,12 @@
           <span class="text-primary font-label-md tracking-widest uppercase">TENTANG KAMI</span>
           <h2 class="font-headline-lg text-3xl md:text-5xl text-on-surface font-bold leading-tight">Kesenian yang Berakar pada Komunitas</h2>
           <div class="font-body-md text-on-surface-variant flex flex-col gap-md text-base md:text-lg leading-relaxed mt-sm">
-            <p>KIOS PURWA lahir dari keinginan sederhana: memberikan panggung yang layak bagi para pengrajin lokal. Kami percaya bahwa setiap produk memiliki jiwa, dan setiap guratan tangan adalah cerita tentang dedikasi yang tak lekang oleh waktu.</p>
-            <p>Dengan pendekatan 'Minimalisme Digital', kami menghadirkan nuansa alam ke ruang yang tenang, simetris dan jujur di pasar tradisional yang ramah bagi semua dengan efisiensi teknologi masa kini.</p>
+            <p>Kios Purwa merupakan UMKM lokal yang berlokasi di Pasar Seni Sukawati yang menghadirkan berbagai produk khas Bali dengan sentuhan seni dan budaya tradisional. Kami menyediakan beragam pilihan tas handmade, pakaian khas Bali, hingga pernak-pernik dan kerajinan unik yang cocok digunakan sehari-hari maupun sebagai oleh-oleh khas Bali.</p>
+            <p>Dengan mengutamakan kualitas produk, harga yang terjangkau, serta pelayanan yang ramah, Kios Purwa berkomitmen untuk membantu melestarikan karya seni lokal sekaligus memperkenalkan keindahan budaya Bali kepada masyarakat dan wisatawan. Kami percaya bahwa setiap produk memiliki nilai seni dan cerita yang mencerminkan kekayaan budaya Pulau Dewata.</p>
           </div>
         </div>
         <div class="rounded-3xl overflow-hidden aspect-4/3 md:aspect-square bg-surface-container">
-          <img src="https://placehold.co/800x800/e6e4dc/5a6b58?text=Ceramics" alt="Ceramics" class="w-full h-full object-cover">
+          <img src="/images/about/about_story.png" alt="Tas dan Kerajinan Bali" class="w-full h-full object-cover">
         </div>
       </section>
       <section class="flex flex-col gap-xl bg-surface-bright rounded-[40px] p-lg md:p-2xl">
@@ -37,27 +37,27 @@
         </div>
         <div class="grid grid-cols-1 md:grid-cols-2 gap-md md:gap-lg md:h-150 mt-md">
           <div class="relative rounded-3xl overflow-hidden group h-75 md:h-full">
-            <img src="https://placehold.co/600x800/d4d0c5/5a6b58?text=Seleksi+Bahan" alt="Seleksi Bahan Alam" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
+            <img src="/images/about/process_bahan.png" alt="Seleksi Bahan Alam" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
             <div class="absolute inset-0 bg-linear-to-t from-black/80 via-black/20 to-transparent flex items-end p-xl">
               <span class="text-white font-label-lg text-lg font-medium">01. Seleksi Bahan Alam</span>
             </div>
           </div>
           <div class="flex flex-col gap-md md:gap-lg h-full">
             <div class="relative rounded-3xl overflow-hidden group flex-1 h-62.5 md:h-auto">
-              <img src="https://placehold.co/800x400/c5c1b6/5a6b58?text=Sentuhan+Tangan" alt="Sentuhan Tangan Ahli" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
+              <img src="/images/about/process_tangan.png" alt="Sentuhan Tangan Ahli" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
               <div class="absolute inset-0 bg-linear-to-t from-black/80 via-black/20 to-transparent flex items-end p-xl">
                 <span class="text-white font-label-lg text-lg font-medium">02. Sentuhan Tangan Ahli</span>
               </div>
             </div>
             <div class="grid grid-cols-2 gap-md md:gap-lg flex-1 h-50 md:h-auto">
               <div class="relative rounded-3xl overflow-hidden group">
-                <img src="https://placehold.co/400x400/b6b2a7/5a6b58?text=Kontrol+Kualitas" alt="Kontrol Kualitas" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
+                <img src="/images/about/process_qc.png" alt="Kontrol Kualitas" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
                 <div class="absolute inset-0 bg-linear-to-t from-black/80 via-black/20 to-transparent flex items-end p-lg">
                   <span class="text-white font-label-md font-medium">03. Kontrol Kualitas</span>
                 </div>
               </div>
               <div class="relative rounded-3xl overflow-hidden group">
-                <img src="https://placehold.co/400x400/a7a398/5a6b58?text=Siap+Untuk+Anda" alt="Siap Untuk Anda" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
+                <img src="/images/about/process_siap.png" alt="Siap Untuk Anda" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
                 <div class="absolute inset-0 bg-linear-to-t from-black/80 via-black/20 to-transparent flex items-end p-lg">
                   <span class="text-white font-label-md font-medium">04. Siap Untuk Anda</span>
                 </div>
@@ -66,7 +66,7 @@
           </div>
         </div>
       </section>
-      <section class="flex flex-col gap-xl">
+      <section class="flex flex-col gap-xl mt-lg md:mt-90">
         <h2 class="font-headline-lg text-3xl md:text-4xl text-on-surface font-bold text-center mb-md">Dampak Nyata Bersama Anda</h2>
         <div class="grid grid-cols-1 md:grid-cols-3 gap-md md:gap-xl">
           <div class="bg-surface-container rounded-3xl p-xl flex flex-col items-center justify-center text-center gap-sm aspect-video md:aspect-square">
@@ -81,7 +81,7 @@
           </div>
           <div class="bg-surface-container rounded-3xl p-xl flex flex-col items-center justify-center text-center gap-sm aspect-video md:aspect-square">
             <span class="material-symbols-outlined text-[48px] text-primary">local_mall</span>
-            <div class="font-display-md text-5xl font-bold text-on-surface">1200+</div>
+            <div class="font-display-md text-5xl font-bold text-on-surface">100+</div>
             <div class="font-label-md text-on-surface-variant">Produk Terkurasi Terjual</div>
           </div>
         </div>
@@ -90,23 +90,32 @@
         <p class="font-body-lg text-xl md:text-2xl text-on-surface italic leading-relaxed">
           "Melalui KIOS PURWA, saya tidak hanya menjual barang, tetapi saya menceritakan sejarah keluarga saya kepada dunia."
         </p>
-        <span class="font-label-lg text-primary font-bold">- Pak Santosa, Pengrajin Kayu Jati</span>
+        <span class="font-label-lg text-primary font-bold">- Bu Agung, Owner Kios Purwa</span>
       </section>
       <section class="flex flex-col items-center justify-center text-center gap-lg py-xl">
         <h2 class="font-headline-md text-2xl font-bold text-on-surface">Ingin tahu lebih banyak?</h2>
         <div class="flex flex-col sm:flex-row gap-md">
-          <button class="bg-[#25D366] text-white px-xl py-3.5 rounded-full font-label-lg flex items-center justify-center gap-2 hover:bg-[#1ebd5a] transition-colors shadow-sm">
+          <a class="bg-[#25D366] text-white px-xl py-3.5 rounded-full font-label-lg flex items-center justify-center gap-2 hover:bg-[#1ebd5a] transition-colors shadow-sm" href="https://wa.me/628123456789" target="_blank" rel="noopener noreferrer" title="Hubungi Kami via WhatsApp">
             <span class="material-symbols-outlined">chat</span>
             Chat with Seller on WhatsApp
-          </button>
+          </a>
           <router-link to="/catalog" class="border border-outline text-on-surface px-xl py-3.5 rounded-full font-label-lg flex items-center justify-center hover:bg-surface-container transition-colors">
             Lihat Katalog Produk
           </router-link>
         </div>
       </section>
       <section class="grid grid-cols-1 md:grid-cols-2 gap-0 md:gap-xl items-center bg-surface-bright rounded-[40px] overflow-hidden border border-surface-container-highest">
-        <div class="h-75 md:h-125 w-full">
-          <img src="https://placehold.co/800x600/e6e4dc/5a6b58?text=Lokasi+Kios+Purwa" alt="Lokasi KIOS PURWA" class="w-full h-full object-cover">
+        <div class="h-75 md:h-125 w-full relative">
+          <iframe 
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3944.394982635397!2d115.2810842750139!3d-8.594738591462067!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2dd216447816b177%3A0x64e29cc2c77178a5!2sPasar%20Seni%20Sukawati!5e0!3m2!1sen!2sid!4v1716435960000!5m2!1sen!2sid" 
+            width="100%" 
+            height="100%" 
+            style="border:0;" 
+            allowfullscreen="" 
+            loading="lazy" 
+            referrerpolicy="no-referrer-when-downgrade"
+            class="w-full h-full object-cover">
+          </iframe>
         </div>
         <div class="flex flex-col gap-lg p-xl md:p-2xl md:pr-3xl">
           <h2 class="font-headline-lg text-3xl font-bold text-on-surface">Lokasi Kami</h2>
@@ -133,10 +142,15 @@
           </div>
           
           <div class="pt-md mt-sm border-t border-surface-container-highest">
-            <button class="border border-outline text-on-surface px-lg py-2.5 rounded-full font-label-md flex items-center gap-2 hover:bg-surface-container transition-colors w-fit">
+            <a 
+              href="https://www.google.com/maps/dir/?api=1&destination=Pasar+Seni+Sukawati+Bali" 
+              target="_blank" 
+              rel="noopener noreferrer" 
+              class="border border-outline text-on-surface px-lg py-2.5 rounded-full font-label-md flex items-center gap-2 hover:bg-surface-container transition-colors w-fit"
+            >
               <span class="material-symbols-outlined text-[20px]">directions</span>
               Petunjuk Arah
-            </button>
+            </a>
           </div>
         </div>
       </section>

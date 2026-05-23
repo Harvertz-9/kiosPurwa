@@ -103,7 +103,7 @@ const filteredProducts = computed(() => {
                                 <img class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
                                     :src="product.image" :alt="product.title" />
                                 <span
-                                    class="absolute top-3 left-3 bg-tertiary-container/90 backdrop-blur-sm text-on-tertiary-container text-label-sm font-label-sm px-3 py-1 rounded-full">{{ product.category }}</span>
+                                    class="absolute top-3 left-3 bg-primary backdrop-blur-sm text-white text-label-sm font-label-sm px-3 py-1 rounded-full">{{ product.category }}</span>
                             </div>
                             <div class="p-md flex flex-col grow">
                                 <h2
