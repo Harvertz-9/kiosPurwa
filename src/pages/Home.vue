@@ -1,12 +1,10 @@
 <script setup>
-import Navbar from '../components/Navbar.vue'
-import Footer from '../components/Footer.vue'
 </script>
 
 <template>
 
     <body class="font-body-md text-body-md selection:bg-primary-fixed selection:text-on-primary-fixed pb-20 md:pb-0">
-        <Navbar />
+
         <main>
             <section class="w-full pt-lg pb-xl px-margin-mobile md:px-gutter max-w-360 mx-auto">
                 <div class="flex flex-col lg:flex-row items-center gap-lg">
@@ -228,6 +226,6 @@ import Footer from '../components/Footer.vue'
                 </div>
             </section>
         </main>
-        <Footer></Footer>
+
     </body>
 </template>

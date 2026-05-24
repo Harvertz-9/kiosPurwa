@@ -1,8 +1,6 @@
 <script setup>
-import Navbar from '../components/Navbar.vue';
-import Footer from '../components/Footer.vue';
 import { ref, computed } from 'vue';
-import { categories, products } from '../data/product.js';
+import { categories, products } from '@/data/products.js';
 
 const selectedCategory = ref('Semua');
 const selectedPrices = ref([]);
@@ -33,7 +31,7 @@ const filteredProducts = computed(() => {
 <template>
 
     <body class="bg-background text-on-background font-body-md overflow-x-hidden">
-        <Navbar />
+
         <main class="mx-auto px-margin-mobile md:px-gutter py-md max-w-360 pt-16">
             <div class="flex flex-col lg:flex-row gap-lg">
                 <aside class="w-full lg:w-64 shrink-0">
@@ -124,6 +122,6 @@ const filteredProducts = computed(() => {
                 </div>
             </div>
         </main>
-        <Footer />
+
     </body>
 </template>

@@ -1,11 +1,9 @@
 <script setup>
-  import Navbar from '../components/Navbar.vue';
-  import Footer from '../components/Footer.vue';
     </script>
 
 <template>
   <div class="bg-surface text-on-surface min-h-screen pb-2xl">
-    <Navbar />
+
     <!-- Hero Section -->
     <section class="relative w-full h-[60vh] md:h-[80vh] bg-surface-container flex items-center justify-center overflow-hidden">
       <!-- Background Image Placeholder -->
@@ -156,5 +154,5 @@
       </section>
     </div>
   </div>
-  <Footer />
+
 </template>

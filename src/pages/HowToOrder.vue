@@ -1,12 +1,10 @@
 <script setup lang="ts">
-import Navbar from '../components/Navbar.vue';
-import Footer from '../components/Footer.vue';
 </script>
 
 <template>
 
     <body class="font-body-md text-body-md selection:bg-primary-fixed selection:text-on-primary-fixed">
-        <Navbar />
+
         <main class="max-w-container-max mx-auto px-margin-mobile md:px-gutter py-xl">
             <section class="mb-xl text-center">
                 <h1 class="font-headline-xl text-headline-xl text-on-surface mb-md">Langkah Mudah Berbelanja</h1>
@@ -103,6 +101,6 @@ import Footer from '../components/Footer.vue';
                 </div>
             </section>
         </main>
-        <Footer />
+
     </body>
 </template>
