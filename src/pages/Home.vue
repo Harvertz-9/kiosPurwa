@@ -61,10 +61,12 @@ import Footer from '../components/Footer.vue'
                             <h2 class="font-headline-lg text-headline-lg text-on-surface">Kategori Unggulan</h2>
                             <p class="text-on-surface-variant font-body-md text-body-md">Temukan produk terbaik hasil kurasi teliti.</p>
                         </div>
-                        <a class="text-primary font-label-md text-label-md hover:underline flex items-center gap-1"
+                        <router-link to="/catalog">
+                        <button class="text-primary font-label-md text-label-md cursor-pointer flex items-center gap-1"
                             href="#">
-                            Lihat Semua <span class="material-symbols-outlined text-[18px]">chevron_right</span>
-                        </a>
+                            Lihat Semua
+                        </button>
+                        </router-link>
                     </div>
                     <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-md md:gap-lg">
                         <div
@@ -210,7 +212,7 @@ import Footer from '../components/Footer.vue'
                             </div>
                             <div class="pt-md flex justify-center lg:justify-start">
                                 <a class="inline-flex items-center gap-2 border border-primary text-primary px-lg py-3 rounded-xl font-label-md text-label-md hover:bg-primary-fixed transition-colors w-full sm:w-auto justify-center"
-                                    href="#">
+                                    href="https://www.google.com/maps/dir/?api=1&destination=Pasar+Seni+Sukawati+Bali" target="_blank" rel="noopener noreferrer">
                                     <span class="material-symbols-outlined">directions</span>
                                     Petunjuk Arah
                                 </a>
