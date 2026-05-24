@@ -156,11 +156,13 @@
                                 </div>
                             </div>
                             <div class="mt-lg flex justify-center lg:justify-start">
-                                <a class="inline-flex items-center justify-center gap-2 bg-primary text-on-primary px-lg py-4 rounded-xl font-label-md text-label-md shadow-md hover:shadow-lg active:scale-95 transition-all w-full sm:w-auto"
-                                    href="#">
-                                    <span class="material-symbols-outlined">add_shopping_cart</span>
-                                    Mulai Belanja Sekarang
-                                </a>
+                                <router-link to="/catalog">
+                                    <a class="inline-flex items-center justify-center gap-2 bg-primary text-on-primary px-lg py-4 rounded-xl font-label-md text-label-md shadow-md hover:shadow-lg active:scale-95 transition-all w-full sm:w-auto"
+                                        href="#">
+                                        <span class="material-symbols-outlined">add_shopping_cart</span>
+                                        Mulai Belanja Sekarang
+                                    </a>
+                                </router-link>
                             </div>
                         </div>
                         <div class="w-full lg:w-1/2">
