@@ -212,7 +212,7 @@
                             </div>
                             <div class="pt-md flex justify-center lg:justify-start">
                                 <a class="inline-flex items-center gap-2 border border-primary text-primary px-lg py-3 rounded-xl font-label-md text-label-md hover:bg-primary-fixed transition-colors w-full sm:w-auto justify-center"
-                                    href="https://www.google.com/maps/dir/?api=1&destination=Pasar+Seni+Sukawati+Bali" target="_blank" rel="noopener noreferrer">
+                                    href="https://www.google.com/maps/dir/?api=1&destination=Kios+Purwa,+Jl.+Lettu+Wayan+Suta,+Sukawati,+Gianyar,+Bali" target="_blank" rel="noopener noreferrer">
                                     <span class="material-symbols-outlined">directions</span>
                                     Petunjuk Arah
                                 </a>

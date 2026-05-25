@@ -93,7 +93,7 @@
       <section class="flex flex-col items-center justify-center text-center gap-lg py-xl">
         <h2 class="font-headline-md text-2xl font-bold text-on-surface">Ingin tahu lebih banyak?</h2>
         <div class="flex flex-col sm:flex-row gap-md">
-          <a class="bg-[#25D366] text-white px-xl py-3.5 rounded-full font-label-lg flex items-center justify-center gap-2 hover:bg-[#1ebd5a] transition-colors shadow-sm" href="https://wa.me/628123456789" target="_blank" rel="noopener noreferrer" title="Hubungi Kami via WhatsApp">
+          <a class="bg-[#25D366] text-white px-xl py-3.5 rounded-full font-label-lg flex items-center justify-center gap-2 hover:bg-[#1ebd5a] transition-colors shadow-sm" href="https://wa.me/628137380844" target="_blank" rel="noopener noreferrer" title="Hubungi Kami via WhatsApp">
             <span class="material-symbols-outlined">chat</span>
             Chat with Seller on WhatsApp
           </a>
@@ -105,7 +105,7 @@
       <section class="grid grid-cols-1 md:grid-cols-2 gap-0 md:gap-xl items-center bg-surface-bright rounded-[40px] overflow-hidden border border-surface-container-highest">
         <div class="h-75 md:h-125 w-full relative">
           <iframe 
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3944.394982635397!2d115.2810842750139!3d-8.594738591462067!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2dd216447816b177%3A0x64e29cc2c77178a5!2sPasar%20Seni%20Sukawati!5e0!3m2!1sen!2sid!4v1716435960000!5m2!1sen!2sid" 
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3518.6502950541812!2d115.27941577449255!3d-8.596217387283335!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2dd23e28417884dd%3A0x4feba4be973223b2!2sKios%20Purwa!5e1!3m2!1sid!2sid!4v1779674629572!5m2!1sid!2sid" 
             width="100%" 
             height="100%" 
             style="border:0;" 
@@ -138,10 +138,9 @@
               </div>
             </div>
           </div>
-          
           <div class="pt-md mt-sm border-t border-surface-container-highest">
             <a 
-              href="https://www.google.com/maps/dir/?api=1&destination=Pasar+Seni+Sukawati+Bali" 
+              href="https://www.google.com/maps/dir/?api=1&destination=Kios+Purwa,+Jl.+Lettu+Wayan+Suta,+Sukawati,+Gianyar,+Bali" 
               target="_blank" 
               rel="noopener noreferrer" 
               class="border border-outline text-on-surface px-lg py-2.5 rounded-full font-label-md flex items-center gap-2 hover:bg-surface-container transition-colors w-fit"

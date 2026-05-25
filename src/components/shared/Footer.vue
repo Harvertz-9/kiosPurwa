@@ -44,12 +44,12 @@
                 <h5 class="text-body-md text-on-secondary-container font-bold uppercase tracking-wider">
                     Hubungi Kami</h5>
                 <div class="flex items-center gap-sm">
-                    <a class="flex items-center gap-5" href="https://wa.me/628123456789" target="_blank" rel="noopener noreferrer" title="Hubungi Kami via WhatsApp">
+                    <a class="flex items-center gap-5" href="https://wa.me/628137380844" target="_blank" rel="noopener noreferrer" title="Hubungi Kami via WhatsApp">
                         <div class="w-12 h-12 rounded-full bg-primary text-on-primary flex items-center justify-center hover:opacity-90 transition-opacity shadow-sm"
                             >
                             <span class="material-symbols-outlined text-[20px]">call</span>
                         </div>
-                        <p>+62 812-3456-7890</p>
+                        <p>+62 813-7380-844</p>
                     </a>
                 </div>
             </div>
