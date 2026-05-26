@@ -76,13 +76,6 @@ const filteredProducts = computed(() => {
                                             type="checkbox" v-model="selectedPrices" value="50000-200000" />
                                         <span class="group-hover:text-primary transition-colors">50rb - 200rb</span>
                                     </label>
-                                    <label
-                                        class="flex items-center gap-sm font-body-md cursor-pointer group bg-surface-container-low lg:bg-transparent px-4 py-2 lg:p-0 rounded-full lg:rounded-none border border-outline-variant lg:border-none shrink-0">
-                                        <input
-                                            class="rounded border-outline-variant text-primary focus:ring-primary h-5 w-5"
-                                            type="checkbox" v-model="selectedPrices" value="200000-Infinity" />
-                                        <span class="group-hover:text-primary transition-colors">> 200rb</span>
-                                    </label>
                                 </div>
                             </div>
                         </div>

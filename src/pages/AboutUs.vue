@@ -3,10 +3,7 @@
 
 <template>
   <div class="bg-surface text-on-surface min-h-screen pb-2xl">
-
-    <!-- Hero Section -->
     <section class="relative w-full h-[60vh] md:h-[80vh] bg-surface-container flex items-center justify-center overflow-hidden">
-      <!-- Background Image Placeholder -->
       <img src="/images/about/about_hero.png" alt="Hero Background" class="absolute inset-0 w-full h-full object-cover opacity-70 mix-blend-overlay">
       <div class="absolute inset-0 bg-black/50"></div>
       <div class="relative z-10 flex flex-col items-center text-center px-margin-mobile md:px-gutter max-w-200 gap-md">
