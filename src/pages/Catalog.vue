@@ -1,9 +1,41 @@
 <script setup>
-import { ref, computed } from 'vue';
+import { ref, computed, watch, onMounted, onUnmounted } from 'vue';
 import { categories, products } from '@/data/products.js';
 
 const selectedCategory = ref('Semua');
 const selectedPrices = ref([]);
+
+// Pagination
+const currentPage = ref(1);
+const itemsPerPage = 12;
+
+// Category Dropdown (Mobile)
+const isCategoryDropdownOpen = ref(false);
+const categoryDropdownRef = ref(null);
+
+const activeCategoryIcon = computed(() => {
+    const cat = categories.find(c => c.name === selectedCategory.value);
+    return cat ? cat.icon : 'apps';
+});
+
+const selectCategory = (name) => {
+    selectedCategory.value = name;
+    isCategoryDropdownOpen.value = false;
+};
+
+const closeDropdown = (e) => {
+    if (categoryDropdownRef.value && !categoryDropdownRef.value.contains(e.target)) {
+        isCategoryDropdownOpen.value = false;
+    }
+};
+
+onMounted(() => {
+    document.addEventListener('click', closeDropdown);
+});
+
+onUnmounted(() => {
+    document.removeEventListener('click', closeDropdown);
+});
 
 const filteredProducts = computed(() => {
     let result = products;
@@ -26,6 +58,24 @@ const filteredProducts = computed(() => {
     
     return result;
 });
+
+const totalPages = computed(() => Math.ceil(filteredProducts.value.length / itemsPerPage));
+
+const paginatedProducts = computed(() => {
+    const start = (currentPage.value - 1) * itemsPerPage;
+    const end = start + itemsPerPage;
+    return filteredProducts.value.slice(start, end);
+});
+
+// Reset page when filter changes
+watch([selectedCategory, selectedPrices], () => {
+    currentPage.value = 1;
+});
+
+// Scroll to top when page changes
+watch(currentPage, () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+});
 </script>
 
 <template>
@@ -37,13 +87,60 @@ const filteredProducts = computed(() => {
                 <aside class="w-full lg:w-64 shrink-0">
                     <div class="lg:sticky lg:top-24 space-y-md">
                         <div class="flex flex-col gap-md">
-                            <div
-                                class="overflow-x-auto no-scrollbar -mx-margin-mobile px-margin-mobile lg:mx-0 lg:px-0">
-                                <h3
-                                    class="font-label-md text-label-md text-on-surface uppercase tracking-wider mb-sm hidden lg:block">
-                                    Kategori</h3>
-                                <div
-                                    class="flex flex-row lg:flex-col gap-sm lg:gap-xs pb-sm lg:pb-0 whitespace-nowrap lg:whitespace-normal">
+                            <!-- Kategori Filter: Mobile Dropdown -->
+                            <div ref="categoryDropdownRef" class="relative lg:hidden w-full">
+                                <h3 class="font-label-md text-label-md text-on-surface uppercase tracking-wider mb-xs">
+                                    Kategori
+                                </h3>
+                                <button
+                                    @click="isCategoryDropdownOpen = !isCategoryDropdownOpen"
+                                    class="w-full flex items-center justify-between px-4 py-3 rounded-xl border border-outline-variant bg-surface-container-low text-on-surface hover:border-primary transition-all font-label-md text-left active:scale-[0.99]"
+                                >
+                                    <div class="flex items-center gap-sm">
+                                        <span class="material-symbols-outlined text-[20px] text-primary">{{ activeCategoryIcon }}</span>
+                                        <span>{{ selectedCategory }}</span>
+                                    </div>
+                                    <span 
+                                        class="material-symbols-outlined text-[20px] transition-transform duration-300"
+                                        :class="{ 'rotate-180': isCategoryDropdownOpen }"
+                                    >
+                                        keyboard_arrow_down
+                                    </span>
+                                </button>
+                                
+                                <!-- Dropdown Menu -->
+                                <Transition
+                                    enter-active-class="transition duration-100 ease-out"
+                                    enter-from-class="transform scale-95 opacity-0"
+                                    enter-to-class="transform scale-100 opacity-100"
+                                    leave-active-class="transition duration-75 ease-in"
+                                    leave-from-class="transform scale-100 opacity-100"
+                                    leave-to-class="transform scale-95 opacity-0"
+                                >
+                                    <div 
+                                        v-if="isCategoryDropdownOpen" 
+                                        class="absolute z-30 mt-xs w-full rounded-xl bg-surface-bright border border-outline-variant shadow-lg py-1 overflow-hidden"
+                                    >
+                                        <button
+                                            v-for="cat in categories"
+                                            :key="cat.name"
+                                            @click="selectCategory(cat.name)"
+                                            class="w-full flex items-center gap-sm px-4 py-3 text-on-surface-variant hover:bg-primary hover:text-on-primary transition-colors text-left font-label-md"
+                                            :class="{ 'bg-primary/5 text-primary font-semibold': selectedCategory === cat.name }"
+                                        >
+                                            <span class="material-symbols-outlined text-[20px]">{{ cat.icon }}</span>
+                                            {{ cat.name }}
+                                        </button>
+                                    </div>
+                                </Transition>
+                            </div>
+
+                            <!-- Kategori Filter: Desktop List -->
+                            <div class="hidden lg:block">
+                                <h3 class="font-label-md text-label-md text-on-surface uppercase tracking-wider mb-sm">
+                                    Kategori
+                                </h3>
+                                <div class="flex flex-col gap-xs">
                                     <button
                                         v-for="cat in categories" :key="cat.name"
                                         @click="selectedCategory = cat.name"
@@ -86,30 +183,63 @@ const filteredProducts = computed(() => {
                         <span class="material-symbols-outlined text-4xl text-outline">inventory_2</span>
                         Tidak ada produk dalam kategori ini.
                     </div>
-                    <div v-else
-                        class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 xl:grid-cols-3 2xl:grid-cols-4 gap-gutter">
-                        <div v-for="product in filteredProducts" :key="product.id"
-                            class="group bg-surface-container-low rounded-xl overflow-hidden transition-all hover:shadow-lg border border-transparent hover:border-outline-variant flex flex-col h-full">
-                            <div class="aspect-square relative overflow-hidden bg-surface-container-highest">
-                                <img class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
-                                    :src="product.image" :alt="product.title" />
-                                <span
-                                    class="absolute top-3 left-3 bg-primary backdrop-blur-sm text-white text-label-sm font-label-sm px-3 py-1 rounded-full">{{ product.category }}</span>
-                            </div>
-                            <div class="p-md flex flex-col grow">
-                                <h2
-                                    class="font-headline-md text-headline-md text-on-surface mb-xs group-hover:text-primary transition-colors">
-                                    {{ product.title }}</h2>
-                                <p class="font-body-md text-secondary mb-md line-clamp-2">{{ product.description }}</p>
-                                <div class="mt-auto space-y-md">
-                                    <div class="font-headline-md text-primary font-bold">{{ product.price }}</div>
-                                    <button
-                                        class="w-full bg-primary text-on-primary font-label-md py-3 rounded-xl flex items-center justify-center gap-sm hover:opacity-90 active:scale-[0.98] transition-all">
-                                        <span class="material-symbols-outlined text-[20px]"
-                                            data-icon="visibility">visibility</span> Hubungi kami
-                                    </button>
+                    <div v-else class="space-y-lg">
+                        <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-5 gap-sm sm:gap-md md:gap-gutter">
+                            <div v-for="product in paginatedProducts" :key="product.id"
+                                class="group bg-surface-container-low rounded-xl overflow-hidden transition-all hover:shadow-lg border border-transparent hover:border-outline-variant flex flex-col h-full">
+                                <div class="aspect-square relative overflow-hidden bg-surface-container-highest">
+                                    <img class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                                        :src="product.image" :alt="product.title" />
+                                    <span
+                                        class="absolute top-2 left-2 bg-primary backdrop-blur-sm text-white text-[10px] sm:text-label-sm font-label-sm px-2 py-0.5 sm:px-3 sm:py-1 rounded-full">{{ product.category }}</span>
+                                </div>
+                                <div class="p-sm sm:p-md flex flex-col grow">
+                                    <h2
+                                        class="font-semibold text-body-md sm:text-headline-md text-on-surface mb-xs group-hover:text-primary transition-colors line-clamp-1">
+                                        {{ product.title }}</h2>
+                                    <p class="font-body-md text-secondary mb-sm sm:mb-md line-clamp-2 text-xs sm:text-body-md">{{ product.description }}</p>
+                                    <div class="mt-auto space-y-sm sm:space-y-md">
+                                        <div class="text-body-lg sm:text-headline-md text-primary font-bold">{{ product.price }}</div>
+                                        <button
+                                            class="w-full bg-primary text-on-primary text-xs sm:text-label-md py-2 sm:py-3 rounded-xl flex items-center justify-center gap-xs sm:gap-sm hover:opacity-90 active:scale-[0.98] transition-all">
+                                            <span class="material-symbols-outlined text-[16px] sm:text-[20px]"
+                                                data-icon="visibility">visibility</span> Hubungi kami
+                                        </button>
+                                    </div>
                                 </div>
                             </div>
+                        </div>
+
+                        <!-- Pagination -->
+                        <div v-if="totalPages > 1" class="flex flex-wrap items-center justify-center gap-xs pt-md border-t border-outline-variant">
+                            <button
+                                @click="currentPage > 1 && currentPage--"
+                                :disabled="currentPage === 1"
+                                class="flex items-center gap-xs px-4 py-2 rounded-md font-label-md border border-outline-variant text-on-surface-variant hover:bg-primary hover:text-on-primary disabled:opacity-30 disabled:pointer-events-none transition-colors"
+                            >
+                                <span class="material-symbols-outlined text-[20px]">chevron_left</span>
+                                
+                            </button>
+
+                            <button
+                                v-for="page in totalPages"
+                                :key="page"
+                                @click="currentPage = page"
+                                :class="currentPage === page
+                                    ? 'w-10 h-10 flex items-center justify-center rounded-md bg-primary text-on-primary font-label-md border border-transparent transition-all'
+                                    : 'w-10 h-10 flex items-center justify-center rounded-md border border-outline-variant text-on-surface-variant hover:bg-primary hover:text-on-primary font-label-md transition-colors'"
+                            >
+                                {{ page }}
+                            </button>
+
+                            <button
+                                @click="currentPage < totalPages && currentPage++"
+                                :disabled="currentPage === totalPages"
+                                class="flex items-center gap-xs px-4 py-2 rounded-md font-label-md border border-outline-variant text-on-surface-variant hover:bg-primary hover:text-on-primary disabled:opacity-30 disabled:pointer-events-none transition-colors"
+                            >
+                                
+                                <span class="material-symbols-outlined text-[20px]">chevron_right</span>
+                            </button>
                         </div>
                     </div>
                 </div>
