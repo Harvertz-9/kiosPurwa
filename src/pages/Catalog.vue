@@ -200,11 +200,11 @@ watch(currentPage, () => {
                                     <p class="font-body-md text-secondary mb-sm sm:mb-md line-clamp-2 text-xs sm:text-body-md">{{ product.description }}</p>
                                     <div class="mt-auto space-y-sm sm:space-y-md">
                                         <div class="text-body-lg sm:text-headline-md text-primary font-bold">{{ product.price }}</div>
-                                        <button
+                                        <a href="https://wa.me/62895330633174"
                                             class="w-full bg-primary text-on-primary text-xs sm:text-label-md py-2 sm:py-3 rounded-xl flex items-center justify-center gap-xs sm:gap-sm hover:opacity-90 active:scale-[0.98] transition-all">
                                             <span class="material-symbols-outlined text-[16px] sm:text-[20px]"
                                                 data-icon="visibility">visibility</span> Hubungi kami
-                                        </button>
+                                        </a>
                                     </div>
                                 </div>
                             </div>

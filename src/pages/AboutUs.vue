@@ -90,7 +90,7 @@
       <section class="flex flex-col items-center justify-center text-center gap-lg py-xl">
         <h2 class="font-headline-md text-2xl font-bold text-on-surface">Ingin tahu lebih banyak?</h2>
         <div class="flex flex-col sm:flex-row gap-md">
-          <a class="bg-[#25D366] text-white px-xl py-3.5 rounded-full font-label-lg flex items-center justify-center gap-2 hover:bg-[#1ebd5a] transition-colors shadow-sm" href="https://wa.me/628137380844" target="_blank" rel="noopener noreferrer" title="Hubungi Kami via WhatsApp">
+          <a class="bg-[#25D366] text-white px-xl py-3.5 rounded-full font-label-lg flex items-center justify-center gap-2 hover:bg-[#1ebd5a] transition-colors shadow-sm" href="https://wa.me/62895330633174" target="_blank" rel="noopener noreferrer" title="Hubungi Kami via WhatsApp">
             <span class="material-symbols-outlined">chat</span>
             Chat with Seller on WhatsApp
           </a>
