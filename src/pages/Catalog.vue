@@ -170,8 +170,22 @@ watch(currentPage, () => {
                                         class="flex items-center gap-sm font-body-md cursor-pointer group bg-surface-container-low lg:bg-transparent px-4 py-2 lg:p-0 rounded-full lg:rounded-none border border-outline-variant lg:border-none shrink-0">
                                         <input
                                             class="rounded border-outline-variant text-primary focus:ring-primary h-5 w-5"
-                                            type="checkbox" v-model="selectedPrices" value="50000-200000" />
-                                        <span class="group-hover:text-primary transition-colors">50rb - 200rb</span>
+                                            type="checkbox" v-model="selectedPrices" value="50000-150000" />
+                                        <span class="group-hover:text-primary transition-colors">50rb - 150rb</span>
+                                    </label>
+                                    <label
+                                        class="flex items-center gap-sm font-body-md cursor-pointer group bg-surface-container-low lg:bg-transparent px-4 py-2 lg:p-0 rounded-full lg:rounded-none border border-outline-variant lg:border-none shrink-0">
+                                        <input
+                                            class="rounded border-outline-variant text-primary focus:ring-primary h-5 w-5"
+                                            type="checkbox" v-model="selectedPrices" value="150000-300000" />
+                                        <span class="group-hover:text-primary transition-colors">150rb - 300rb</span>
+                                    </label>
+                                    <label
+                                        class="flex items-center gap-sm font-body-md cursor-pointer group bg-surface-container-low lg:bg-transparent px-4 py-2 lg:p-0 rounded-full lg:rounded-none border border-outline-variant lg:border-none shrink-0">
+                                        <input
+                                            class="rounded border-outline-variant text-primary focus:ring-primary h-5 w-5"
+                                            type="checkbox" v-model="selectedPrices" value="300000-500000" />
+                                        <span class="group-hover:text-primary transition-colors">300rb - 500rb</span>
                                     </label>
                                 </div>
                             </div>
@@ -184,7 +198,7 @@ watch(currentPage, () => {
                         Tidak ada produk dalam kategori ini.
                     </div>
                     <div v-else class="space-y-lg">
-                        <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-5 gap-sm sm:gap-md md:gap-gutter">
+                        <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-3 xl:grid-cols-4 gap-sm sm:gap-md md:gap-gutter">
                             <div v-for="product in paginatedProducts" :key="product.id"
                                 class="group bg-surface-container-low rounded-xl overflow-hidden transition-all hover:shadow-lg border border-transparent hover:border-outline-variant flex flex-col h-full">
                                 <div class="aspect-square relative overflow-hidden bg-surface-container-highest">
@@ -195,11 +209,11 @@ watch(currentPage, () => {
                                 </div>
                                 <div class="p-sm sm:p-md flex flex-col grow">
                                     <h2
-                                        class="font-semibold text-body-md sm:text-headline-md text-on-surface mb-xs group-hover:text-primary transition-colors line-clamp-1">
+                                        class="font-bold text-body-md text-on-surface mb-xs group-hover:text-primary transition-colors ">
                                         {{ product.title }}</h2>
-                                    <p class="font-body-md text-secondary mb-sm sm:mb-md line-clamp-2 text-xs sm:text-body-md">{{ product.description }}</p>
+                                    <p class="font-body-md text-secondary mb-sm sm:mb-md line-clamp-2 text-sm">{{ product.description }}</p>
                                     <div class="mt-auto space-y-sm sm:space-y-md">
-                                        <div class="text-body-lg sm:text-headline-md text-primary font-bold">{{ product.price }}</div>
+                                        <div class="text-body-lg text-primary font-bold">{{ product.price }}</div>
                                         <a href="https://wa.me/62895330633174"
                                             class="w-full bg-primary text-on-primary text-xs sm:text-label-md py-2 sm:py-3 rounded-xl flex items-center justify-center gap-xs sm:gap-sm hover:opacity-90 active:scale-[0.98] transition-all">
                                             <span class="material-symbols-outlined text-[16px] sm:text-[20px]"
