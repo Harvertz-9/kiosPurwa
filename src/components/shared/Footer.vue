@@ -49,7 +49,6 @@ const waLink = () => createWhatsAppLink({ type: 'general', lang: currentLang.val
                         Tentang</h5>
                     <ul class="space-y-xs">
                         <li><router-link to="/about-us" class="text-on-secondary-container text-body-md hover:text-primary transition-colors inline-block py-1">Tentang Kami</router-link></li>
-                        <li><router-link to="/contact" class="text-on-secondary-container text-body-md hover:text-primary transition-colors inline-block py-1">Hubungi Kami</router-link></li>
                     </ul>
                 </div>
             </div>

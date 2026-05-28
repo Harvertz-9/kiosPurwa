@@ -79,6 +79,10 @@ const itemsPerPage = 12;
 const isCategoryDropdownOpen = ref(false);
 const categoryDropdownRef    = ref(null);
 
+// Price Dropdown (Mobile)
+const isPriceDropdownOpen = ref(false);
+const priceDropdownRef    = ref(null);
+
 const activeCategoryIcon = computed(() => {
     const cat = categories.find(c => c.name === selectedCategory.value);
     return cat ? cat.icon : 'apps';
@@ -89,6 +93,19 @@ const activeDisplayName = computed(() => {
     return cat ? cat.displayName : selectedCategory.value;
 });
 
+const activePriceLabel = computed(() => {
+    if (selectedPrices.value.length === 0) {
+        return isEn.value ? 'All Prices' : 'Semua Harga';
+    }
+    if (selectedPrices.value.length === 1) {
+        const range = t.value.priceRanges.find(r => r.value === selectedPrices.value[0]);
+        return range ? range.label : selectedPrices.value[0];
+    }
+    return isEn.value 
+        ? `${selectedPrices.value.length} Prices Selected` 
+        : `${selectedPrices.value.length} Harga Terpilih`;
+});
+
 const selectCategory = (name) => {
     selectedCategory.value = name;
     isCategoryDropdownOpen.value = false;
@@ -97,6 +114,9 @@ const selectCategory = (name) => {
 const closeDropdown = (e) => {
     if (categoryDropdownRef.value && !categoryDropdownRef.value.contains(e.target)) {
         isCategoryDropdownOpen.value = false;
+    }
+    if (priceDropdownRef.value && !priceDropdownRef.value.contains(e.target)) {
+        isPriceDropdownOpen.value = false;
     }
 };
 
@@ -219,16 +239,69 @@ watch(currentPage, () => { window.scrollTo({ top: 0, behavior: 'smooth' }); });
                                 </div>
                             </div>
 
-                            <!-- Harga / Price Filter -->
-                            <div class="pt-md lg:pt-md border-t border-outline-variant overflow-x-auto no-scrollbar -mx-margin-mobile px-margin-mobile lg:mx-0 lg:px-0">
-                                <h3 class="font-label-md text-label-md text-on-surface uppercase tracking-wider mb-sm hidden lg:block">
+                            <!-- Harga / Price Filter: Mobile Dropdown -->
+                            <div ref="priceDropdownRef" class="relative lg:hidden w-full pt-md border-t border-outline-variant">
+                                <h3 class="font-label-md text-label-md text-on-surface uppercase tracking-wider mb-xs">
                                     {{ t.priceLabel }}
                                 </h3>
-                                <div class="flex flex-row lg:flex-col gap-sm lg:gap-sm pb-sm lg:pb-0 whitespace-nowrap lg:whitespace-normal">
+                                <button
+                                    @click="isPriceDropdownOpen = !isPriceDropdownOpen"
+                                    class="w-full flex items-center justify-between px-4 py-3 rounded-xl border border-outline-variant bg-surface-container-low text-on-surface hover:border-primary transition-all font-label-md text-left active:scale-[0.99]"
+                                >
+                                    <div class="flex items-center gap-sm">
+                                        <span class="material-symbols-outlined text-[20px] text-primary">payments</span>
+                                        <span>{{ activePriceLabel }}</span>
+                                    </div>
+                                    <span
+                                        class="material-symbols-outlined text-[20px] transition-transform duration-300"
+                                        :class="{ 'rotate-180': isPriceDropdownOpen }"
+                                    >
+                                        keyboard_arrow_down
+                                    </span>
+                                </button>
+
+                                <!-- Price Dropdown Menu -->
+                                <Transition
+                                    enter-active-class="transition duration-100 ease-out"
+                                    enter-from-class="transform scale-95 opacity-0"
+                                    enter-to-class="transform scale-100 opacity-100"
+                                    leave-active-class="transition duration-75 ease-in"
+                                    leave-from-class="transform scale-100 opacity-100"
+                                    leave-to-class="transform scale-95 opacity-0"
+                                >
+                                    <div
+                                        v-if="isPriceDropdownOpen"
+                                        class="absolute z-30 mt-xs w-full rounded-xl bg-surface-bright border border-outline-variant shadow-lg py-1 overflow-hidden"
+                                    >
+                                        <div class="flex flex-col gap-xs p-2">
+                                            <label
+                                                v-for="range in t.priceRanges"
+                                                :key="range.value"
+                                                class="flex items-center gap-sm font-body-md cursor-pointer group bg-transparent hover:bg-surface-container px-3 py-2.5 rounded-lg transition-colors"
+                                            >
+                                                <input
+                                                    class="rounded border-outline-variant text-primary focus:ring-primary h-5 w-5 cursor-pointer"
+                                                    type="checkbox"
+                                                    v-model="selectedPrices"
+                                                    :value="range.value"
+                                                />
+                                                <span class="group-hover:text-primary transition-colors text-on-surface-variant font-label-md select-none">{{ range.label }}</span>
+                                            </label>
+                                        </div>
+                                    </div>
+                                </Transition>
+                            </div>
+
+                            <!-- Harga / Price Filter: Desktop List -->
+                            <div class="hidden lg:block pt-md border-t border-outline-variant">
+                                <h3 class="font-label-md text-label-md text-on-surface uppercase tracking-wider mb-sm">
+                                    {{ t.priceLabel }}
+                                </h3>
+                                <div class="flex flex-col gap-sm">
                                     <label
                                         v-for="range in t.priceRanges"
                                         :key="range.value"
-                                        class="flex items-center gap-sm font-body-md cursor-pointer group bg-surface-container-low lg:bg-transparent px-4 py-2 lg:p-0 rounded-full lg:rounded-none border border-outline-variant lg:border-none shrink-0"
+                                        class="flex items-center gap-sm font-body-md cursor-pointer group p-0"
                                     >
                                         <input
                                             class="rounded border-outline-variant text-primary focus:ring-primary h-5 w-5"
@@ -236,7 +309,7 @@ watch(currentPage, () => { window.scrollTo({ top: 0, behavior: 'smooth' }); });
                                             v-model="selectedPrices"
                                             :value="range.value"
                                         />
-                                        <span class="group-hover:text-primary transition-colors">{{ range.label }}</span>
+                                        <span class="group-hover:text-primary transition-colors text-on-surface-variant">{{ range.label }}</span>
                                     </label>
                                 </div>
                             </div>
