@@ -1,4 +1,19 @@
 <script setup>
+import { ref, onMounted } from 'vue';
+import { createWhatsAppLink } from '@/utils/whatsapp.js';
+
+const currentLang = ref('id');
+
+onMounted(() => {
+    const goog = document.cookie.match(/(^| )googtrans=([^;]+)/);
+    if (goog) {
+        const parts = goog[2].split('/');
+        const lang = parts[2];
+        currentLang.value = ['id', 'en'].includes(lang) ? lang : 'id';
+    }
+});
+
+const waLink = () => createWhatsAppLink({ type: 'general', lang: currentLang.value });
 </script>
 
 <template>
@@ -44,7 +59,7 @@
                 <h5 class="text-body-md text-on-secondary-container font-bold uppercase tracking-wider">
                     Hubungi Kami</h5>
                 <div class="flex items-center gap-sm">
-                    <a class="flex items-center gap-5" href="https://wa.me/62895330633174" target="_blank" rel="noopener noreferrer" title="Hubungi Kami via WhatsApp">
+                    <a class="flex items-center gap-5" :href="waLink()" target="_blank" rel="noopener noreferrer" title="Hubungi Kami via WhatsApp">
                         <div class="w-12 h-12 rounded-full bg-primary text-on-primary flex items-center justify-center hover:opacity-90 transition-opacity shadow-sm"
                             >
                             <span class="material-symbols-outlined text-[20px]">call</span>
