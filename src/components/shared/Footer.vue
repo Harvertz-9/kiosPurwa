@@ -26,9 +26,6 @@ const waLink = () => createWhatsAppLink({ type: 'general', lang: currentLang.val
                 <p class="text-body-md text-on-secondary-container leading-relaxed">
                     “Kios Purwa adalah UMKM yang berlokasi di Pasar Sukawati, Bali, yang menyediakan berbagai produk khas Bali seperti tas handmade, pakaian tradisional maupun modern, serta aneka pernak-pernik dan kerajinan seni Bali dengan kualitas baik dan harga terjangkau.”
                 </p>
-                <p class="text-xs text-on-secondary-container/80 pt-base">
-                    © 2024 KIOS PURWA.<br />Crafted for UMKM Excellence.
-                </p>
             </div>
             
             <!-- Kolom 2: Link Navigasi -->
@@ -40,7 +37,6 @@ const waLink = () => createWhatsAppLink({ type: 'general', lang: currentLang.val
                     <ul class="space-y-xs">
                         <li><router-link to="/catalog" class="text-on-secondary-container text-body-md hover:text-primary transition-colors inline-block py-1">Katalog Produk</router-link></li>
                         <li><router-link to="/how-to-order" class="text-on-secondary-container text-body-md hover:text-primary transition-colors inline-block py-1">Cara Pesan</router-link></li>
-                        <li><router-link to="/about-us" class="text-on-secondary-container text-body-md hover:text-primary transition-colors inline-block py-1">Tentang Kami</router-link></li>
                     </ul>
                 </div>
                 <div class="space-y-sm">
@@ -67,6 +63,10 @@ const waLink = () => createWhatsAppLink({ type: 'general', lang: currentLang.val
                     </a>
                 </div>
             </div>
+        </div>
+        <div class="flex justify-between items-center w-full py-md px-margin-mobile md:px-gutter max-w-360 mx-auto mt-xl">
+            <p class="text-sm text-on-secondary-container font-semibold pt-base">© 2024 KIOS PURWA.</p>
+            <p class="text-sm text-on-secondary-container font-semibold pt-base">Crafted for UMKM Excellence.</p>
         </div>
     </footer>
 </template>

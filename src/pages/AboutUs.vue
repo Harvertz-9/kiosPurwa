@@ -22,13 +22,13 @@ const waLink = () => createWhatsAppLink({ type: 'general', lang: currentLang.val
       <img src="/images/about/about_hero.png" alt="Hero Background" class="absolute inset-0 w-full h-full object-cover opacity-70 mix-blend-overlay">
       <div class="absolute inset-0 bg-black/50"></div>
       <div class="relative z-10 flex flex-col items-center text-center px-margin-mobile md:px-gutter max-w-200 gap-md">
-        <h1 class="text-white font-headline-lg text-4xl md:text-6xl font-bold tracking-tight">Kisah di Balik KIOS PURWA</h1>
-        <p class="text-white/90 font-body-lg text-lg md:text-xl">Menjembatani warisan budaya dengan karya murni modern melalui kurasi produk UMKM terbaik.</p>
+        <h1 class="text-white font-headline-lg text-4xl md:text-6xl font-bold tracking-tight" data-aos="fade-up">Kisah di Balik KIOS PURWA</h1>
+        <p class="text-white/90 font-body-lg text-lg md:text-xl" data-aos="fade-up" data-aos-delay="150">Menjembatani warisan budaya dengan karya murni modern melalui kurasi produk UMKM terbaik.</p>
       </div>
     </section>
     <div class="px-margin-mobile md:px-gutter max-w-360 mx-auto pt-xl md:pt-2xl flex flex-col gap-2xl md:gap-30">
       <section class="grid grid-cols-1 md:grid-cols-2 gap-xl md:gap-2xl items-center">
-        <div class="flex flex-col gap-md md:gap-lg md:pr-xl">
+        <div class="flex flex-col gap-md md:gap-lg md:pr-xl" data-aos="fade-right">
           <span class="text-primary font-label-md tracking-widest uppercase">TENTANG KAMI</span>
           <h2 class="font-headline-lg text-3xl md:text-5xl text-on-surface font-bold leading-tight">Kesenian yang Berakar pada Komunitas</h2>
           <div class="font-body-md text-on-surface-variant flex flex-col gap-md text-base md:text-lg leading-relaxed mt-sm">
@@ -36,7 +36,7 @@ const waLink = () => createWhatsAppLink({ type: 'general', lang: currentLang.val
             <p>Dengan mengutamakan kualitas produk, harga yang terjangkau, serta pelayanan yang ramah, Kios Purwa berkomitmen untuk membantu melestarikan karya seni lokal sekaligus memperkenalkan keindahan budaya Bali kepada masyarakat dan wisatawan. Kami percaya bahwa setiap produk memiliki nilai seni dan cerita yang mencerminkan kekayaan budaya Pulau Dewata.</p>
           </div>
         </div>
-        <div class="rounded-3xl overflow-hidden aspect-4/3 md:aspect-square bg-surface-container">
+        <div class="rounded-3xl overflow-hidden aspect-4/3 md:aspect-square bg-surface-container" data-aos="fade-left" data-aos-delay="150">
           <img src="/images/about/about_story.png" alt="Tas dan Kerajinan Bali" class="w-full h-full object-cover">
         </div>
       </section>
@@ -45,31 +45,31 @@ const waLink = () => createWhatsAppLink({ type: 'general', lang: currentLang.val
           <h2 class="font-headline-lg text-3xl md:text-4xl text-on-surface font-bold">Proses Kreatif Kami</h2>
           <p class="font-body-md text-on-surface-variant text-lg">Dari bahan mentah hingga menjadi karya seni di rumah Anda.</p>
         </div>
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-md md:gap-lg md:h-150 mt-md">
-          <div class="relative rounded-3xl overflow-hidden group h-75 md:h-full">
-            <img src="/images/about/process_bahan.png" alt="Seleksi Bahan Alam" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
-            <div class="absolute inset-0 bg-linear-to-t from-black/80 via-black/20 to-transparent flex items-end p-xl">
-              <span class="text-white font-label-lg text-lg font-medium">01. Seleksi Bahan Alam</span>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-md md:h-150 mt-md">
+          <div class="relative rounded-3xl overflow-hidden group aspect-16/10 sm:aspect-video md:h-full md:aspect-auto bg-surface-container">
+            <img src="/images/catalog/web/web/IMG_8613.jpg" alt="Bahan Alam Pilihan" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
+            <div class="absolute inset-0 bg-linear-to-t from-black/90 via-black/40 to-transparent flex flex-col justify-end p-6">
+              <span class="text-white font-label-lg text-lg md:text-2xl font-bold">01. Bahan Alam Pilihan</span>
             </div>
           </div>
           <div class="flex flex-col gap-md md:gap-lg h-full">
-            <div class="relative rounded-3xl overflow-hidden group flex-1 h-62.5 md:h-auto">
-              <img src="/images/about/process_tangan.png" alt="Sentuhan Tangan Ahli" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
-              <div class="absolute inset-0 bg-linear-to-t from-black/80 via-black/20 to-transparent flex items-end p-xl">
-                <span class="text-white font-label-lg text-lg font-medium">02. Sentuhan Tangan Ahli</span>
+            <div class="relative rounded-3xl overflow-hidden group aspect-16/10 sm:aspect-video md:h-auto md:flex-1 md:aspect-auto bg-surface-container">
+              <img src="/images/catalog/web/web/IMG_8569.jpg" alt="Sentuhan Ukiran Manual" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
+              <div class="absolute inset-0 bg-linear-to-t from-black/90 via-black/40 to-transparent flex flex-col justify-end p-5 sm:p-6">
+                <span class="text-white font-label-lg text-lg md:text-2xl font-bold">02. Sentuhan Ukiran Manual</span>
               </div>
             </div>
-            <div class="grid grid-cols-2 gap-md md:gap-lg flex-1 h-50 md:h-auto">
-              <div class="relative rounded-3xl overflow-hidden group">
-                <img src="/images/about/process_qc.png" alt="Kontrol Kualitas" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
-                <div class="absolute inset-0 bg-linear-to-t from-black/80 via-black/20 to-transparent flex items-end p-lg">
-                  <span class="text-white font-label-md font-medium">03. Kontrol Kualitas</span>
+            <div class="grid grid-cols-2 gap-md flex-1">
+              <div class="relative rounded-3xl overflow-hidden group aspect-square md:aspect-auto bg-surface-container">
+                <img src="/images/catalog/web/web/IMG_8637.jpg" alt="Inlay Kerang" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
+                <div class="absolute inset-0 bg-linear-to-t from-black/90 via-black/40 to-transparent flex flex-col justify-end p-3.5 sm:p-5">
+                  <span class="text-white font-label-md font-bold text-md md:text-xl">03. Inlay Kerang</span>
                 </div>
               </div>
-              <div class="relative rounded-3xl overflow-hidden group">
-                <img src="/images/about/process_siap.png" alt="Siap Untuk Anda" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
-                <div class="absolute inset-0 bg-linear-to-t from-black/80 via-black/20 to-transparent flex items-end p-lg">
-                  <span class="text-white font-label-md font-medium">04. Siap Untuk Anda</span>
+              <div class="relative rounded-3xl overflow-hidden group aspect-square md:aspect-auto bg-surface-container">
+                <img src="/images/catalog/web/web/IMG_8641.jpg" alt="Siap Untuk Anda" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
+                <div class="absolute inset-0 bg-linear-to-t from-black/90 via-black/40 to-transparent flex flex-col justify-end p-3.5 sm:p-5">
+                  <span class="text-white font-label-md font-bold text-md md:text-xl">04. Siap Untuk Anda</span>
                 </div>
               </div>
             </div>
