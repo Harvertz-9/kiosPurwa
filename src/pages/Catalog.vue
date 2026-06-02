@@ -375,7 +375,7 @@ watch(currentPage, () => { window.scrollTo({ top: 0, behavior: 'smooth' }); });
                                     </h2>
                                     <p class="font-body-md text-secondary mb-sm sm:mb-md line-clamp-2 text-sm">{{ product.description }}</p>
                                     <div class="mt-auto space-y-sm sm:space-y-md">
-                                        <a :href="createWhatsAppLink({ type: 'product', productName: product.title, productPrice: formatPrice(product.price), lang: currentLang })"
+                                        <a :href="createWhatsAppLink({ type: 'product', productName: product.title, lang: currentLang })"
                                             target="_blank" rel="noopener noreferrer"
                                             class="w-full bg-primary text-on-primary text-xs sm:text-label-md py-2 sm:py-3 rounded-xl flex items-center justify-center gap-xs sm:gap-sm hover:opacity-90 active:scale-[0.98] transition-all">
                                             <span class="material-symbols-outlined text-[16px] sm:text-[20px]" data-icon="chat">chat</span>

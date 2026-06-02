@@ -122,7 +122,11 @@
    box-sizing: border-box;
 }
 
-html,
+html {
+   background-color: #faf9f6;
+   color: #1a1c1a;
+}
+
 body {
    background-color: #faf9f6;
    color: #1a1c1a;
@@ -140,10 +144,12 @@ table {
 }
 
 #mobile-menu {
-   transition: transform 0.3s ease-in-out;
+   transition: transform 0.3s ease-in-out, visibility 0.3s ease-in-out;
    transform: translateY(-100%);
+   visibility: hidden;
 }
 
 #mobile-menu.active {
    transform: translateY(0);
+   visibility: visible;
 }

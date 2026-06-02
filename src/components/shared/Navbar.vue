@@ -1,5 +1,5 @@
 <template>
-    <header class="bg-surface docked full-width top-0 sticky z-40 shadow-sm border-b border-surface-container-highest">
+    <header class="sticky top-0 w-full bg-surface z-40 shadow-sm border-b border-surface-container-highest">
         <div
             class="flex justify-between items-center w-full px-margin-mobile md:px-gutter max-w-360 mx-auto h-16 relative z-50 bg-surface">
             <div class="notranslate font-headline-md text-headline-md font-bold text-primary tracking-tight">KIOS PURWA</div>
@@ -60,7 +60,7 @@
         </div>
 
         <!-- Mobile Menu Overlay -->
-        <div class="fixed top-16 left-0 w-full bg-surface-bright shadow-lg z-30 md:hidden border-b border-surface-container-highest"
+        <div class="fixed top-0 left-0 w-full pt-16 bg-surface-bright shadow-lg z-30 md:hidden border-b border-surface-container-highest"
             :class="{ active: isMobileMenuOpen }"
             id="mobile-menu">
             <div class="flex flex-col p-margin-mobile gap-base">
