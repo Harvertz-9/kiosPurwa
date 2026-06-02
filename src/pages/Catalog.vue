@@ -161,14 +161,14 @@ const filteredProducts = computed(() => {
     return result;
 });
 
-const totalPages = computed(() => Math.min(Math.ceil(filteredProducts.value.length / itemsPerPage), 3));
+const totalPages = computed(() => Math.min(Math.ceil(filteredProducts.value.length / itemsPerPage), 6));
 
 const paginatedProducts = computed(() => {
     const start = (currentPage.value - 1) * itemsPerPage;
     return filteredProducts.value.slice(start, start + itemsPerPage);
 });
 
-// Halaman pagination yang ditampilkan (maks 3)
+// Halaman pagination yang ditampilkan (maks 6 dengan elipsis)
 const visiblePages = computed(() => {
     const total = totalPages.value;
     const current = currentPage.value;
@@ -177,18 +177,23 @@ const visiblePages = computed(() => {
     if (total <= 3) {
         for (let i = 1; i <= total; i++) pages.push(i);
     } else {
-        if (current === 1) {
+        if (current <= 2) {
             pages.push(1, 2, 3);
-        } else if (current === total) {
+            pages.push('...');
+        } else if (current >= total - 1) {
             pages.push(total - 2, total - 1, total);
         } else {
             pages.push(current - 1, current, current + 1);
+            pages.push('...');
         }
     }
     return pages;
 });
 
 watch([selectedCategory, selectedPrices], () => { currentPage.value = 1; });
+watch(selectedPrices, () => {
+    isPriceDropdownOpen.value = false;
+}, { deep: true });
 watch(currentPage, () => { window.scrollTo({ top: 0, behavior: 'smooth' }); });
 </script>
 
@@ -391,16 +396,23 @@ watch(currentPage, () => { window.scrollTo({ top: 0, behavior: 'smooth' }); });
                                 <span class="material-symbols-outlined text-[20px]">chevron_left</span>
                             </button>
 
-                            <button
-                                v-for="page in visiblePages"
-                                :key="page"
-                                @click="currentPage = page"
-                                :class="currentPage === page
-                                    ? 'w-10 h-10 flex items-center justify-center rounded-md bg-primary text-on-primary font-label-md border border-transparent transition-all'
-                                    : 'w-10 h-10 flex items-center justify-center rounded-md border border-outline-variant text-on-surface-variant hover:bg-primary hover:text-on-primary font-label-md transition-colors'"
-                            >
-                                {{ page }}
-                            </button>
+                            <template v-for="page in visiblePages" :key="page">
+                                <span
+                                    v-if="page === '...'"
+                                    class="w-10 h-10 flex items-center justify-center text-on-surface-variant font-label-md select-none"
+                                >
+                                    ...
+                                </span>
+                                <button
+                                    v-else
+                                    @click="currentPage = page"
+                                    :class="currentPage === page
+                                        ? 'w-10 h-10 flex items-center justify-center rounded-md bg-primary text-on-primary font-label-md border border-transparent transition-all cursor-pointer'
+                                        : 'w-10 h-10 flex items-center justify-center rounded-md border border-outline-variant text-on-surface-variant hover:bg-primary hover:text-on-primary font-label-md transition-colors cursor-pointer'"
+                                >
+                                    {{ page }}
+                                </button>
+                            </template>
 
                             <button
                                 @click="currentPage < totalPages && currentPage++"

@@ -5,7 +5,7 @@ import BackToTop from '@/components/ui/BackToTop.vue'
 </script>
 
 <template>
-    <div class="flex flex-col min-h-screen overflow-x-hidden">
+    <div class="flex flex-col min-h-screen">
         <Navbar />
         <main class="flex-1">
             <slot />
