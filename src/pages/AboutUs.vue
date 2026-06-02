@@ -22,13 +22,13 @@ const waLink = () => createWhatsAppLink({ type: 'general', lang: currentLang.val
       <img src="/images/about/about_hero.png" alt="Hero Background" class="absolute inset-0 w-full h-full object-cover opacity-70 mix-blend-overlay">
       <div class="absolute inset-0 bg-black/50"></div>
       <div class="relative z-10 flex flex-col items-center text-center px-margin-mobile md:px-gutter max-w-200 gap-md">
-        <h1 class="text-white font-headline-lg text-4xl md:text-6xl font-bold tracking-tight" data-aos="fade-up">Kisah di Balik KIOS PURWA</h1>
-        <p class="text-white/90 font-body-lg text-lg md:text-xl" data-aos="fade-up" data-aos-delay="150">Menjembatani warisan budaya dengan karya murni modern melalui kurasi produk UMKM terbaik.</p>
+        <h1 class="text-white font-headline-lg text-4xl md:text-6xl font-bold tracking-tight">Kisah di Balik KIOS PURWA</h1>
+        <p class="text-white/90 font-body-lg text-lg md:text-xl">Menjembatani warisan budaya dengan karya murni modern melalui kurasi produk UMKM terbaik.</p>
       </div>
     </section>
     <div class="px-margin-mobile md:px-gutter max-w-360 mx-auto pt-xl md:pt-2xl flex flex-col gap-2xl md:gap-30">
       <section class="grid grid-cols-1 md:grid-cols-2 gap-xl md:gap-2xl items-center">
-        <div class="flex flex-col gap-md md:gap-lg md:pr-xl" data-aos="fade-right">
+        <div class="flex flex-col gap-md md:gap-lg md:pr-xl">
           <span class="text-primary font-label-md tracking-widest uppercase">TENTANG KAMI</span>
           <h2 class="font-headline-lg text-3xl md:text-5xl text-on-surface font-bold leading-tight">Kesenian yang Berakar pada Komunitas</h2>
           <div class="font-body-md text-on-surface-variant flex flex-col gap-md text-base md:text-lg leading-relaxed mt-sm">
@@ -36,7 +36,7 @@ const waLink = () => createWhatsAppLink({ type: 'general', lang: currentLang.val
             <p>Dengan mengutamakan kualitas produk, harga yang terjangkau, serta pelayanan yang ramah, Kios Purwa berkomitmen untuk membantu melestarikan karya seni lokal sekaligus memperkenalkan keindahan budaya Bali kepada masyarakat dan wisatawan. Kami percaya bahwa setiap produk memiliki nilai seni dan cerita yang mencerminkan kekayaan budaya Pulau Dewata.</p>
           </div>
         </div>
-        <div class="rounded-3xl overflow-hidden aspect-4/3 md:aspect-square bg-surface-container" data-aos="fade-left" data-aos-delay="150">
+        <div class="rounded-3xl overflow-hidden aspect-4/3 md:aspect-square bg-surface-container">
           <img src="/images/about/about_story.png" alt="Tas dan Kerajinan Bali" class="w-full h-full object-cover">
         </div>
       </section>
@@ -116,13 +116,13 @@ const waLink = () => createWhatsAppLink({ type: 'general', lang: currentLang.val
       </section>
       <section class="grid grid-cols-1 md:grid-cols-2 gap-0 md:gap-xl items-center bg-surface-bright rounded-[40px] overflow-hidden border border-surface-container-highest">
         <div class="h-75 md:h-125 w-full relative">
-          <iframe 
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3518.6502950541812!2d115.27941577449255!3d-8.596217387283335!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2dd23e28417884dd%3A0x4feba4be973223b2!2sKios%20Purwa!5e1!3m2!1sid!2sid!4v1779674629572!5m2!1sid!2sid" 
-            width="100%" 
-            height="100%" 
-            style="border:0;" 
-            allowfullscreen="" 
-            loading="lazy" 
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3518.6502950541812!2d115.27941577449255!3d-8.596217387283335!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2dd23e28417884dd%3A0x4feba4be973223b2!2sKios%20Purwa!5e1!3m2!1sid!2sid!4v1779674629572!5m2!1sid!2sid"
+            width="100%"
+            height="100%"
+            style="border:0;"
+            allowfullscreen=""
+            loading="lazy"
             referrerpolicy="no-referrer-when-downgrade"
             class="w-full h-full object-cover">
           </iframe>
@@ -132,7 +132,6 @@ const waLink = () => createWhatsAppLink({ type: 'general', lang: currentLang.val
           <p class="font-body-md text-on-surface-variant text-lg">
             Kunjungi pusat kreasi kami untuk melihat langsung proses pembuatan dan koleksi lengkap produk UMKM terbaik.
           </p>
-          
           <div class="flex flex-col gap-lg mt-sm">
             <div class="flex items-start gap-md">
               <span class="material-symbols-outlined text-primary text-[28px]">location_on</span>
@@ -141,7 +140,6 @@ const waLink = () => createWhatsAppLink({ type: 'general', lang: currentLang.val
                 <div class="font-body-md text-on-surface-variant">Jl. Lettu Wayan Suta, Sukawati, Gianyar, Bali, Indonesia</div>
               </div>
             </div>
-            
             <div class="flex items-start gap-md">
               <span class="material-symbols-outlined text-primary text-[28px]">schedule</span>
               <div class="flex flex-col gap-1">
@@ -151,10 +149,10 @@ const waLink = () => createWhatsAppLink({ type: 'general', lang: currentLang.val
             </div>
           </div>
           <div class="pt-md mt-sm border-t border-surface-container-highest">
-            <a 
-              href="https://www.google.com/maps/dir/?api=1&destination=Kios+Purwa,+Jl.+Lettu+Wayan+Suta,+Sukawati,+Gianyar,+Bali" 
-              target="_blank" 
-              rel="noopener noreferrer" 
+            <a
+              href="https://www.google.com/maps/dir/?api=1&destination=Kios+Purwa,+Jl.+Lettu+Wayan+Suta,+Sukawati,+Gianyar,+Bali"
+              target="_blank"
+              rel="noopener noreferrer"
               class="border border-outline text-on-surface px-lg py-2.5 rounded-full font-label-md flex items-center gap-2 hover:bg-surface-container transition-colors w-fit"
             >
               <span class="material-symbols-outlined text-[20px]">directions</span>
@@ -165,5 +163,4 @@ const waLink = () => createWhatsAppLink({ type: 'general', lang: currentLang.val
       </section>
     </div>
   </div>
-
 </template>

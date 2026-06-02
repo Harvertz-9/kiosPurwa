@@ -115,9 +115,28 @@
    font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
 }
 
+/* ── Global reset untuk mencegah horizontal scroll ── */
+*,
+*::before,
+*::after {
+   box-sizing: border-box;
+}
+
+html,
 body {
    background-color: #faf9f6;
    color: #1a1c1a;
+   /* Cegah horizontal overflow di semua kondisi */
+   overflow-x: hidden;
+   max-width: 100%;
+}
+
+/* Pastikan semua elemen tidak melampaui viewport */
+img,
+video,
+iframe,
+table {
+   max-width: 100%;
 }
 
 #mobile-menu {

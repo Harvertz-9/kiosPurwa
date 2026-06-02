@@ -1,8 +1,13 @@
 <script setup>
 import { ref, onMounted } from 'vue';
 import { createWhatsAppLink } from '@/utils/whatsapp.js';
+import { useRouter } from 'vue-router';
 
+const router = useRouter();
 const currentLang = ref('id');
+
+// Tahun dinamis
+const currentYear = new Date().getFullYear();
 
 onMounted(() => {
     const goog = document.cookie.match(/(^| )googtrans=([^;]+)/);
@@ -14,6 +19,12 @@ onMounted(() => {
 });
 
 const waLink = () => createWhatsAppLink({ type: 'general', lang: currentLang.value });
+
+const goToPage = (path) => {
+    router.push(path).then(() => {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+};
 </script>
 
 <template>
@@ -24,10 +35,10 @@ const waLink = () => createWhatsAppLink({ type: 'general', lang: currentLang.val
             <div class="space-y-sm w-full lg:w-1/3 pr-0 lg:pr-8">
                 <div class="notranslate font-headline-md text-headline-md font-bold text-primary">KIOS PURWA</div>
                 <p class="text-body-md text-on-secondary-container leading-relaxed">
-                    “Kios Purwa adalah UMKM yang berlokasi di Pasar Sukawati, Bali, yang menyediakan berbagai produk khas Bali seperti tas handmade, pakaian tradisional maupun modern, serta aneka pernak-pernik dan kerajinan seni Bali dengan kualitas baik dan harga terjangkau.”
+                    "Kios Purwa adalah UMKM yang berlokasi di Pasar Sukawati, Bali, yang menyediakan berbagai produk khas Bali seperti tas handmade, pakaian tradisional maupun modern, serta aneka pernak-pernik dan kerajinan seni Bali dengan kualitas baik dan harga terjangkau."
                 </p>
             </div>
-            
+
             <!-- Kolom 2: Link Navigasi -->
             <div class="grid grid-cols-1 sm:grid-cols-2 gap-lg md:gap-xl w-full lg:w-1/3">
                 <div class="space-y-sm">
@@ -35,8 +46,12 @@ const waLink = () => createWhatsAppLink({ type: 'general', lang: currentLang.val
                         class="text-body-md text-on-secondary-container font-bold uppercase tracking-wider">
                         Layanan</h5>
                     <ul class="space-y-xs">
-                        <li><router-link to="/catalog" class="text-on-secondary-container text-body-md hover:text-primary transition-colors inline-block py-1">Katalog Produk</router-link></li>
-                        <li><router-link to="/how-to-order" class="text-on-secondary-container text-body-md hover:text-primary transition-colors inline-block py-1">Cara Pesan</router-link></li>
+                        <li>
+                            <button @click="goToPage('/catalog')" class="text-on-secondary-container text-body-md hover:text-primary transition-colors inline-block py-1 text-left cursor-pointer">Katalog Produk</button>
+                        </li>
+                        <li>
+                            <button @click="goToPage('/how-to-order')" class="text-on-secondary-container text-body-md hover:text-primary transition-colors inline-block py-1 text-left cursor-pointer">Cara Pesan</button>
+                        </li>
                     </ul>
                 </div>
                 <div class="space-y-sm">
@@ -44,11 +59,13 @@ const waLink = () => createWhatsAppLink({ type: 'general', lang: currentLang.val
                         class="text-body-md text-on-secondary-container font-bold uppercase tracking-wider">
                         Tentang</h5>
                     <ul class="space-y-xs">
-                        <li><router-link to="/about-us" class="text-on-secondary-container text-body-md hover:text-primary transition-colors inline-block py-1">Tentang Kami</router-link></li>
+                        <li>
+                            <button @click="goToPage('/about-us')" class="text-on-secondary-container text-body-md hover:text-primary transition-colors inline-block py-1 text-left cursor-pointer">Tentang Kami</button>
+                        </li>
                     </ul>
                 </div>
             </div>
-            
+
             <!-- Kolom 3: Kontak & Sosial -->
             <div class="space-y-sm w-full lg:w-1/4">
                 <h5 class="text-body-md text-on-secondary-container font-bold uppercase tracking-wider">
@@ -65,7 +82,7 @@ const waLink = () => createWhatsAppLink({ type: 'general', lang: currentLang.val
             </div>
         </div>
         <div class="flex justify-between items-center w-full py-md px-margin-mobile md:px-gutter max-w-360 mx-auto mt-xl">
-            <p class="text-sm text-on-secondary-container font-semibold pt-base">© 2024 KIOS PURWA.</p>
+            <p class="text-sm text-on-secondary-container font-semibold pt-base">© {{ currentYear }} KIOS PURWA.</p>
             <p class="text-sm text-on-secondary-container font-semibold pt-base">Crafted for UMKM Excellence.</p>
         </div>
     </footer>

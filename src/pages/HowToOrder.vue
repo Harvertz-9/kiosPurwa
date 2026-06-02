@@ -3,7 +3,7 @@
 
 <template>
 
-    <body class="font-body-md text-body-md selection:bg-primary-fixed selection:text-on-primary-fixed">
+    <div class="font-body-md text-body-md selection:bg-primary-fixed selection:text-on-primary-fixed">
 
         <main class="max-w-container-max mx-auto px-margin-mobile md:px-gutter py-xl">
             <section class="mb-xl text-center">
@@ -102,5 +102,5 @@
             </section>
         </main>
 
-    </body>
+    </div>
 </template>

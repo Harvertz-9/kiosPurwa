@@ -58,9 +58,9 @@ const formatPrice = (rawPrice) => {
     const num = parseInt(rawPrice.replace(/\D/g, ''), 10);
     if (isNaN(num)) return rawPrice;
     if (isEn.value) {
-        return 'IDR ' + num.toLocaleString('en-US');  // IDR 45,000
+        return 'IDR ' + num.toLocaleString('en-US');
     }
-    return 'Rp ' + num.toLocaleString('id-ID');       // Rp 45.000
+    return 'Rp ' + num.toLocaleString('id-ID');
 };
 
 // ── Category badge translation ──────────────────────────────────────────────
@@ -101,8 +101,8 @@ const activePriceLabel = computed(() => {
         const range = t.value.priceRanges.find(r => r.value === selectedPrices.value[0]);
         return range ? range.label : selectedPrices.value[0];
     }
-    return isEn.value 
-        ? `${selectedPrices.value.length} Prices Selected` 
+    return isEn.value
+        ? `${selectedPrices.value.length} Prices Selected`
         : `${selectedPrices.value.length} Harga Terpilih`;
 });
 
@@ -111,6 +111,7 @@ const selectCategory = (name) => {
     isCategoryDropdownOpen.value = false;
 };
 
+// Tutup dropdown saat klik di luar
 const closeDropdown = (e) => {
     if (categoryDropdownRef.value && !categoryDropdownRef.value.contains(e.target)) {
         isCategoryDropdownOpen.value = false;
@@ -120,13 +121,21 @@ const closeDropdown = (e) => {
     }
 };
 
+// Tutup dropdown saat scroll
+const closeDropdownOnScroll = () => {
+    isCategoryDropdownOpen.value = false;
+    isPriceDropdownOpen.value = false;
+};
+
 onMounted(() => {
     document.addEventListener('click', closeDropdown);
+    window.addEventListener('scroll', closeDropdownOnScroll, { passive: true });
     detectLang();
 });
 
 onUnmounted(() => {
     document.removeEventListener('click', closeDropdown);
+    window.removeEventListener('scroll', closeDropdownOnScroll);
 });
 
 // ── Filtered & paginated products ───────────────────────────────────────────
@@ -152,11 +161,31 @@ const filteredProducts = computed(() => {
     return result;
 });
 
-const totalPages = computed(() => Math.ceil(filteredProducts.value.length / itemsPerPage));
+const totalPages = computed(() => Math.min(Math.ceil(filteredProducts.value.length / itemsPerPage), 3));
 
 const paginatedProducts = computed(() => {
     const start = (currentPage.value - 1) * itemsPerPage;
     return filteredProducts.value.slice(start, start + itemsPerPage);
+});
+
+// Halaman pagination yang ditampilkan (maks 3)
+const visiblePages = computed(() => {
+    const total = totalPages.value;
+    const current = currentPage.value;
+    const pages = [];
+
+    if (total <= 3) {
+        for (let i = 1; i <= total; i++) pages.push(i);
+    } else {
+        if (current === 1) {
+            pages.push(1, 2, 3);
+        } else if (current === total) {
+            pages.push(total - 2, total - 1, total);
+        } else {
+            pages.push(current - 1, current, current + 1);
+        }
+    }
+    return pages;
 });
 
 watch([selectedCategory, selectedPrices], () => { currentPage.value = 1; });
@@ -165,7 +194,7 @@ watch(currentPage, () => { window.scrollTo({ top: 0, behavior: 'smooth' }); });
 
 <template>
 
-    <body class="bg-background text-on-background font-body-md overflow-x-hidden">
+    <div class="bg-background text-on-background font-body-md overflow-x-hidden">
 
         <main class="mx-auto px-margin-mobile md:px-gutter py-md max-w-360 pt-16">
             <div class="flex flex-col lg:flex-row gap-lg">
@@ -179,7 +208,7 @@ watch(currentPage, () => { window.scrollTo({ top: 0, behavior: 'smooth' }); });
                                     {{ t.categoryLabel }}
                                 </h3>
                                 <button
-                                    @click="isCategoryDropdownOpen = !isCategoryDropdownOpen"
+                                    @click.stop="isCategoryDropdownOpen = !isCategoryDropdownOpen; isPriceDropdownOpen = false"
                                     class="w-full flex items-center justify-between px-4 py-3 rounded-xl border border-outline-variant bg-surface-container-low text-on-surface hover:border-primary transition-all font-label-md text-left active:scale-[0.99]"
                                 >
                                     <div class="flex items-center gap-sm">
@@ -245,7 +274,7 @@ watch(currentPage, () => { window.scrollTo({ top: 0, behavior: 'smooth' }); });
                                     {{ t.priceLabel }}
                                 </h3>
                                 <button
-                                    @click="isPriceDropdownOpen = !isPriceDropdownOpen"
+                                    @click.stop="isPriceDropdownOpen = !isPriceDropdownOpen; isCategoryDropdownOpen = false"
                                     class="w-full flex items-center justify-between px-4 py-3 rounded-xl border border-outline-variant bg-surface-container-low text-on-surface hover:border-primary transition-all font-label-md text-left active:scale-[0.99]"
                                 >
                                     <div class="flex items-center gap-sm">
@@ -318,7 +347,7 @@ watch(currentPage, () => { window.scrollTo({ top: 0, behavior: 'smooth' }); });
                     </div>
                 </aside>
 
-                <div class="grow">
+                <div class="grow min-w-0">
                     <div v-if="filteredProducts.length === 0" class="flex flex-col items-center justify-center text-on-surface-variant py-2xl font-body-lg gap-4 bg-surface-container-low rounded-xl border border-dashed border-outline-variant">
                         <span class="material-symbols-outlined text-4xl text-outline">inventory_2</span>
                         {{ t.emptyState }}
@@ -341,7 +370,6 @@ watch(currentPage, () => { window.scrollTo({ top: 0, behavior: 'smooth' }); });
                                     </h2>
                                     <p class="font-body-md text-secondary mb-sm sm:mb-md line-clamp-2 text-sm">{{ product.description }}</p>
                                     <div class="mt-auto space-y-sm sm:space-y-md">
-                                        <div class="text-body-lg text-primary font-bold">{{ formatPrice(product.price) }}</div>
                                         <a :href="createWhatsAppLink({ type: 'product', productName: product.title, productPrice: formatPrice(product.price), lang: currentLang })"
                                             target="_blank" rel="noopener noreferrer"
                                             class="w-full bg-primary text-on-primary text-xs sm:text-label-md py-2 sm:py-3 rounded-xl flex items-center justify-center gap-xs sm:gap-sm hover:opacity-90 active:scale-[0.98] transition-all">
@@ -353,7 +381,7 @@ watch(currentPage, () => { window.scrollTo({ top: 0, behavior: 'smooth' }); });
                             </div>
                         </div>
 
-                        <!-- Pagination -->
+                        <!-- Pagination (maks 3 halaman tampil) -->
                         <div v-if="totalPages > 1" class="flex flex-wrap items-center justify-center gap-xs pt-md border-t border-outline-variant">
                             <button
                                 @click="currentPage > 1 && currentPage--"
@@ -364,7 +392,7 @@ watch(currentPage, () => { window.scrollTo({ top: 0, behavior: 'smooth' }); });
                             </button>
 
                             <button
-                                v-for="page in totalPages"
+                                v-for="page in visiblePages"
                                 :key="page"
                                 @click="currentPage = page"
                                 :class="currentPage === page
@@ -387,5 +415,5 @@ watch(currentPage, () => { window.scrollTo({ top: 0, behavior: 'smooth' }); });
             </div>
         </main>
 
-    </body>
+    </div>
 </template>

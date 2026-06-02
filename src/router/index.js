@@ -27,6 +27,10 @@ const routes = [
 const router = createRouter({
   history: createWebHistory(),
   routes,
+  // Setiap navigasi selalu scroll ke atas halaman
+  scrollBehavior() {
+    return { top: 0, behavior: 'smooth' }
+  },
 })
 
 export default router
