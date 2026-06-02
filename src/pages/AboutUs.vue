@@ -19,7 +19,7 @@ const waLink = () => createWhatsAppLink({ type: 'general', lang: currentLang.val
 <template>
   <div class="bg-surface text-on-surface min-h-screen pb-2xl">
     <section class="relative w-full h-[60vh] md:h-[80vh] bg-surface-container flex items-center justify-center overflow-hidden">
-      <img src="/images/about/about_hero.png" alt="Hero Background" class="absolute inset-0 w-full h-full object-cover opacity-70 mix-blend-overlay">
+      <img src="/images/about/about_hero.jpg" alt="Hero Background" class="absolute inset-0 w-full h-full object-cover opacity-70 mix-blend-overlay">
       <div class="absolute inset-0 bg-black/50"></div>
       <div class="relative z-10 flex flex-col items-center text-center px-margin-mobile md:px-gutter max-w-200 gap-md">
         <h1 class="text-white font-headline-lg text-4xl md:text-6xl font-bold tracking-tight">Kisah di Balik KIOS PURWA</h1>
@@ -36,8 +36,9 @@ const waLink = () => createWhatsAppLink({ type: 'general', lang: currentLang.val
             <p>Dengan mengutamakan kualitas produk, harga yang terjangkau, serta pelayanan yang ramah, Kios Purwa berkomitmen untuk membantu melestarikan karya seni lokal sekaligus memperkenalkan keindahan budaya Bali kepada masyarakat dan wisatawan. Kami percaya bahwa setiap produk memiliki nilai seni dan cerita yang mencerminkan kekayaan budaya Pulau Dewata.</p>
           </div>
         </div>
-        <div class="rounded-3xl overflow-hidden aspect-4/3 md:aspect-square bg-surface-container">
-          <img src="/images/about/about_story.png" alt="Tas dan Kerajinan Bali" class="w-full h-full object-cover">
+        
+        <div class="rounded-3xl overflow-hidden aspect-4/3 md:aspect-square bg-surface-container" data-aos="fade-left" data-aos-delay="150">
+          <img src="/images/about/about_story.jpg" alt="Tas dan Kerajinan Bali" class="w-full h-full object-cover">
         </div>
       </section>
       <section class="flex flex-col gap-xl bg-surface-bright rounded-[40px] p-lg md:p-2xl">

@@ -11,7 +11,7 @@ export const products = [
         title: 'Gelang Butir',
         description: 'Gelang tangan dengan butiran alami yang diukir tangan, memberikan sentuhan etnik yang unik.',
         price: 'Rp 45.000',
-        image: '/images/catalog/IMG_2810.png',
+        image: '/images/catalog/IMG_2810.jpg',
         category: 'Aksesoris'
     },
     {
@@ -19,7 +19,7 @@ export const products = [
         title: 'Tas Anyaman Rotan',
         description: 'Tas tangan anyaman rotan dengan desain klasik yang cocok untuk berbagai kesempatan.',
         price: 'Rp 65.000',
-        image: '/images/catalog/IMG_2818.png',
+        image: '/images/catalog/IMG_2818.jpg',
         category: 'Kerajinan'
     },
     {
@@ -27,7 +27,7 @@ export const products = [
         title: 'Topi Batik Kontemporer',
         description: 'Topi batik kontemporer dengan desain modern yang cocok untuk berbagai kesempatan.',
         price: 'Rp 89.000',
-        image: '/images/catalog/IMG_2820.png',
+        image: '/images/catalog/IMG_2820.jpg',
         category: 'Kerajinan'
     },
     {
@@ -35,7 +35,7 @@ export const products = [
         title: 'Baju Batik Modern',
         description: 'Baju batik modern dengan desain unik yang cocok untuk berbagai kesempatan.',
         price: 'Rp 120.000',
-        image: '/images/catalog/IMG_2821.png',
+        image: '/images/catalog/IMG_2821.jpg',
         category: 'Fashion'
     },
     {
@@ -43,7 +43,7 @@ export const products = [
         title: 'Kaos Barong Bali',
         description: 'Kaos dengan motif Barong Bali yang ikonik, cocok untuk gaya santai sehari-hari.',
         price: 'Rp 25.000',
-        image: '/images/catalog/IMG_2822.png',
+        image: '/images/catalog/IMG_2822.jpg',
         category: 'Fashion'
     },
     {
@@ -51,7 +51,7 @@ export const products = [
         title: 'Kamen Bali Wanita',
         description: 'Kamen Bali wanita dengan motif tradisional yang elegan, cocok untuk acara adat atau sehari-hari.',
         price: 'Rp 55.000',
-        image: '/images/catalog/IMG_2824.png',
+        image: '/images/catalog/IMG_2824.jpg',
         category: 'Fashion'
     },
     {
@@ -59,7 +59,7 @@ export const products = [
         title: 'Tas Ulat Bali',
         description: 'Tas handmade dari bahan ulat bali yang lembut dan nyaman.',
         price: 'Rp 89.000',
-        image: '/images/catalog/IMG_2816.png',
+        image: '/images/catalog/IMG_2816.jpg',
         category: 'Kerajinan'
     },
     {
@@ -67,7 +67,7 @@ export const products = [
         title: 'Dompet Hias',
         description: 'Dompet handmade dengan desain hiasan yang unik.',
         price: 'Rp 65.000',
-        image: '/images/catalog/IMG_2827.png',
+        image: '/images/catalog/IMG_2827.jpg',
         category: 'Aksesoris'
     },
     {
@@ -557,6 +557,14 @@ export const products = [
         price: 'Rp 95.000',
         image: '/images/catalog/web/web/IMG_8650.jpg',
         category: 'Kerajinan'
+    },
+    {
+        id: 70,
+        image: '/images/catalog/IMG_2823.jpg',
+        title: 'Baju Santai Wanita',
+        description: 'Baju santai wanita motif yang cocok untuk liburan di pantai',
+        price: 'Rp 70.000',
+        category: 'Fashion'
     }
 ];
 

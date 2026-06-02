@@ -72,6 +72,7 @@
                             class="group relative w-[80vw] sm:w-auto shrink-0 snap-center aspect-4/5 rounded-3xl overflow-hidden bg-surface-container cursor-pointer transition-transform duration-300 hover:-translate-y-2">
                             <img alt="Kerajinan"
                                 class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                                data-alt="A beautiful handmade woven rattan bag, featuring intricate natural patterns and classic design, reflecting high-quality local craftsmanship."
                                 src="/images/catalog/IMG_2818.png" />
                             <div
                                 class="absolute inset-0 bg-linear-to-t from-black/80 via-black/20 to-transparent flex items-end p-md">
@@ -85,6 +86,7 @@
                             class="group relative w-[80vw] sm:w-auto shrink-0 snap-center aspect-4/5 rounded-3xl overflow-hidden bg-surface-container cursor-pointer transition-transform duration-300 hover:-translate-y-2">
                             <img alt="Aksesoris"
                                 class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                                data-alt="A collection of premium local accessories, showcasing a handmade beaded bracelet with intricate details, placed on a natural textured surface with warm lighting, expressing elegance and authentic Indonesian craftsmanship."
                                 src="/images/catalog/IMG_2810.png" />
                             <div
                                 class="absolute inset-0 bg-linear-to-t from-black/80 via-black/20 to-transparent flex items-end p-md">
@@ -98,6 +100,7 @@
                             class="group relative w-[80vw] sm:w-auto shrink-0 snap-center aspect-4/5 rounded-3xl overflow-hidden bg-surface-container cursor-pointer transition-transform duration-300 hover:-translate-y-2 sm:col-span-2 lg:col-span-1">
                             <img alt="Pakaian"
                                 class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                                data-alt="A stylish modern Indonesian batik shirt with traditional motifs, showing high-quality fabric and elegant tailoring, blending traditional heritage with contemporary design."
                                 src="/images/catalog/IMG_2821.png" />
                             <div
                                 class="absolute inset-0 bg-linear-to-t from-black/80 via-black/20 to-transparent flex items-end p-md">
