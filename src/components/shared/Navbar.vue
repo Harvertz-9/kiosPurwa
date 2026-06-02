@@ -78,7 +78,7 @@
                 </router-link>
 
                 <!-- Mobile Language Selector Section -->
-                <div class="border-t border-surface-container-highest pt-md mt-sm">
+                <!-- <div class="border-t border-surface-container-highest pt-md mt-sm">
                     <span class="text-xs font-bold text-on-surface-variant uppercase tracking-wider block px-md mb-xs">Pilih Bahasa / Language</span>
                     <div class="flex gap-sm p-sm">
                         <button
@@ -96,7 +96,7 @@
                             English
                         </button>
                     </div>
-                </div>
+                </div> -->
             </div>
         </div>
     </header>

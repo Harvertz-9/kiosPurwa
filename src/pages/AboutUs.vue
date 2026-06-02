@@ -97,7 +97,7 @@ const waLink = () => createWhatsAppLink({ type: 'general', lang: currentLang.val
           </div>
         </div>
       </section>
-      <section class="bg-primary-container/20 border border-primary/10 rounded-4xl p-xl md:py-2xl md:px-3xl text-center max-w-4xl mx-auto flex flex-col gap-lg w-full">
+      <section class="bg-primary-container/20 border border-primary/10 rounded-4xl p-xl md:py-2xl md:px-3xl text-center max-w-4xl mx-auto flex flex-col gap-lg w-full mt-5">
         <p class="font-body-lg text-xl md:text-2xl text-on-surface italic leading-relaxed">
           "Melalui KIOS PURWA, saya tidak hanya menjual barang, tetapi saya menceritakan sejarah keluarga saya kepada dunia."
         </p>
