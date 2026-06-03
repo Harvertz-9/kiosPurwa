@@ -8,12 +8,23 @@ const categories = ref([]);
 const catalogReady = ref(false);
 
 const detectLang = () => {
+    // Read from localStorage first (explicit user choice)
+    try {
+        const saved = localStorage.getItem('kiosPurwa_lang')
+        if (saved && ['id', 'en'].includes(saved)) {
+            currentLang.value = saved
+            return
+        }
+    } catch (e) { /* ignore */ }
+
+    // Fallback to googtrans cookie
     const goog = document.cookie.match(/(^| )googtrans=([^;]+)/);
     if (goog) {
         const parts = goog[2].split('/');
         const lang = parts[2];
         currentLang.value = ['id', 'en'].includes(lang) ? lang : 'id';
     }
+    // If neither found, stays 'id' (the ref default)
 };
 
 // ── Translations ────────────────────────────────────────────────────────────

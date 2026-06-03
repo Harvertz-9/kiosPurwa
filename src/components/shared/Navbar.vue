@@ -113,13 +113,20 @@ const langDropdownRef = ref(null)
 const currentLanguage = ref('id')
 
 onMounted(() => {
-    // Ambil preferensi bahasa dari cookie Google Translate ('googtrans')
-    const match = document.cookie.match(new RegExp('(^| )googtrans=([^;]+)'))
-    if (match) {
-        const parts = match[2].split('/')
-        if (parts.length > 2) {
-            currentLanguage.value = parts[2]
+    // Read user's explicit lang preference from localStorage first
+    const savedLang = localStorage.getItem('kiosPurwa_lang')
+    if (savedLang && ['id', 'en'].includes(savedLang)) {
+        currentLanguage.value = savedLang
+    } else {
+        // Fallback: read from googtrans cookie
+        const match = document.cookie.match(new RegExp('(^| )googtrans=([^;]+)'))
+        if (match) {
+            const parts = match[2].split('/')
+            if (parts.length > 2 && ['id', 'en'].includes(parts[2])) {
+                currentLanguage.value = parts[2]
+            }
         }
+        // If nothing found, default to 'id'
     }
 
     // Tutup semua dropdown saat klik di luar
@@ -151,6 +158,11 @@ const closeAll = () => {
 
 const selectLanguage = (lang) => {
     const target = lang === 'id' ? '/id/id' : `/id/${lang}`
+
+    // Save user's explicit choice to localStorage
+    try {
+        localStorage.setItem('kiosPurwa_lang', lang)
+    } catch (e) { /* ignore */ }
 
     // Set cookie with expiry and explicit path/domain for wider coverage
     try {

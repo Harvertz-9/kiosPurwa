@@ -7,21 +7,28 @@ createApp(App)
   .use(router)
   .mount('#app')
 
-// Ensure default language cookie is set to Indonesian if not present
+// Force Indonesian as default language unless user has explicitly chosen another language
 try {
-  const hasGoog = document.cookie.match(new RegExp('(^| )googtrans=([^;]+)'))
-  if (!hasGoog) {
-    const expires = new Date();
-    expires.setFullYear(expires.getFullYear() + 1);
-    // Do not set domain on localhost or numeric hostnames
-    const hostname = location.hostname;
-    const isLocalhost = hostname === 'localhost' || /^\d+\.\d+\.\d+\.\d+$/.test(hostname);
+  const userChoseLang = localStorage.getItem('kiosPurwa_lang')
+  const expires = new Date();
+  expires.setFullYear(expires.getFullYear() + 1);
+  const hostname = location.hostname;
+  const isLocalhost = hostname === 'localhost' || /^\d+\.\d+\.\d+\.\d+$/.test(hostname);
+
+  if (!userChoseLang) {
+    // No explicit user preference: always default to Indonesian
     const cookieBase = `googtrans=/id/id; path=/; expires=${expires.toUTCString()}`
     document.cookie = isLocalhost ? cookieBase : cookieBase + `; domain=${hostname}`
-    console.log('Set default googtrans cookie to /id/id')
+    console.log('Set default googtrans cookie to /id/id (Indonesian default)')
+  } else {
+    // User previously chose a language explicitly, honor their choice
+    const target = userChoseLang === 'en' ? '/id/en' : '/id/id'
+    const cookieBase = `googtrans=${target}; path=/; expires=${expires.toUTCString()}`
+    document.cookie = isLocalhost ? cookieBase : cookieBase + `; domain=${hostname}`
+    console.log('Restored user lang preference:', userChoseLang)
   }
 } catch (e) {
-  console.warn('Failed to set default googtrans cookie', e)
+  console.warn('Failed to set googtrans cookie', e)
 }
 
 if ('serviceWorker' in navigator) {
