@@ -1,10 +1,11 @@
 <script setup>
 import { ref, computed, watch, onMounted, onUnmounted } from 'vue';
-import { categories, products } from '@/data/products.js';
 import { createWhatsAppLink } from '@/utils/whatsapp.js';
 
 // ── Language detection ──────────────────────────────────────────────────────
 const currentLang = ref('id');
+const categories = ref([]);
+const catalogReady = ref(false);
 
 const detectLang = () => {
     const goog = document.cookie.match(/(^| )googtrans=([^;]+)/);
@@ -47,7 +48,7 @@ const categoryNameMap = {
 };
 
 const translatedCategories = computed(() =>
-    categories.map(cat => ({
+    categories.value.map(cat => ({
         ...cat,
         displayName: isEn.value ? (categoryNameMap[cat.name] ?? cat.name) : cat.name,
     }))
@@ -67,6 +68,15 @@ const formatPrice = (rawPrice) => {
 const translateCategory = (name) =>
     isEn.value ? (categoryNameMap[name] ?? name) : name;
 
+const loadPublicData = () => {
+    if (typeof window !== 'undefined' && window.catalogApi) {
+        categories.value = window.catalogApi.getCategories();
+        catalogReady.value = true;
+    } else {
+        catalogReady.value = false;
+    }
+};
+
 // ── Filter state ────────────────────────────────────────────────────────────
 const selectedCategory = ref('Semua');
 const selectedPrices   = ref([]);
@@ -84,7 +94,7 @@ const isPriceDropdownOpen = ref(false);
 const priceDropdownRef    = ref(null);
 
 const activeCategoryIcon = computed(() => {
-    const cat = categories.find(c => c.name === selectedCategory.value);
+    const cat = categories.value.find(c => c.name === selectedCategory.value);
     return cat ? cat.icon : 'apps';
 });
 
@@ -131,6 +141,7 @@ onMounted(() => {
     document.addEventListener('click', closeDropdown);
     window.addEventListener('scroll', closeDropdownOnScroll, { passive: true });
     detectLang();
+    loadPublicData();
 });
 
 onUnmounted(() => {
@@ -140,25 +151,14 @@ onUnmounted(() => {
 
 // ── Filtered & paginated products ───────────────────────────────────────────
 const filteredProducts = computed(() => {
-    let result = products;
-
-    if (selectedCategory.value !== 'Semua') {
-        result = result.filter(p => p.category === selectedCategory.value);
+    if (!catalogReady.value || typeof window === 'undefined' || !window.catalogApi) {
+        return [];
     }
 
-    if (selectedPrices.value.length > 0) {
-        result = result.filter(p => {
-            const priceNum = parseInt(p.price.replace(/\D/g, ''));
-            return selectedPrices.value.some(range => {
-                const parts = range.split('-');
-                const min   = parseInt(parts[0]);
-                const max   = parts[1] === 'Infinity' ? Infinity : parseInt(parts[1]);
-                return priceNum >= min && priceNum <= max;
-            });
-        });
-    }
-
-    return result;
+    return window.catalogApi.getFilteredProducts({
+        category: selectedCategory.value,
+        priceRanges: selectedPrices.value
+    });
 });
 
 const totalPages = computed(() => Math.min(Math.ceil(filteredProducts.value.length / itemsPerPage), 6));
