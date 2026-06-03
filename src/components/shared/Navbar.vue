@@ -150,17 +150,38 @@ const closeAll = () => {
 }
 
 const selectLanguage = (lang) => {
-    // Terapkan bahasa default 'id' ke bahasa tujuan
     const target = lang === 'id' ? '/id/id' : `/id/${lang}`
-    document.cookie = `googtrans=${target}; path=/`
 
-    // Update state bahasa menu
+    // Set cookie with expiry and explicit path/domain for wider coverage
+    try {
+        const expires = new Date()
+        expires.setFullYear(expires.getFullYear() + 1)
+        const domain = location.hostname
+        document.cookie = `googtrans=${target}; path=/; expires=${expires.toUTCString()}; domain=${domain}`
+    } catch (e) {
+        // Fallback minimal cookie
+        document.cookie = `googtrans=${target}; path=/`
+    }
+
     currentLanguage.value = lang
-
     isLangMenuOpen.value = false
     isMobileMenuOpen.value = false
 
-    // Refresh otomatis untuk memicu terjemahan Google
+    // Try to reinitialize Google Translate widget if already loaded
+    try {
+        if (window.google && window.google.translate && typeof googleTranslateElementInit === 'function') {
+            // Call the global init to re-instantiate the widget
+            googleTranslateElementInit()
+            console.log('Google Translate reinitialized after language change to', lang)
+            // Some cases still require a reload to fetch translated resources
+            setTimeout(() => window.location.reload(), 500)
+            return
+        }
+    } catch (err) {
+        console.warn('Error reinitializing Google Translate:', err)
+    }
+
+    // If translate not available, reload to let the element init run on page load
     window.location.reload()
 }
 </script>
