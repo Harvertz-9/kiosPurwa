@@ -154,10 +154,12 @@ const selectLanguage = (lang) => {
 
     // Set cookie with expiry and explicit path/domain for wider coverage
     try {
-        const expires = new Date()
-        expires.setFullYear(expires.getFullYear() + 1)
-        const domain = location.hostname
-        document.cookie = `googtrans=${target}; path=/; expires=${expires.toUTCString()}; domain=${domain}`
+            const expires = new Date()
+            expires.setFullYear(expires.getFullYear() + 1)
+            const hostname = location.hostname
+            const isLocalhost = hostname === 'localhost' || /^\d+\.\d+\.\d+\.\d+$/.test(hostname)
+            const cookieBase = `googtrans=${target}; path=/; expires=${expires.toUTCString()}`
+            document.cookie = isLocalhost ? cookieBase : cookieBase + `; domain=${hostname}`
     } catch (e) {
         // Fallback minimal cookie
         document.cookie = `googtrans=${target}; path=/`
