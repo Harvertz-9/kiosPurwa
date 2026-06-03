@@ -73,6 +73,7 @@
                             <img alt="Kerajinan"
                                 class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
                                 data-alt="A beautiful handmade woven rattan bag, featuring intricate natural patterns and classic design, reflecting high-quality local craftsmanship."
+                                loading="lazy" decoding="async"
                                 src="/images/catalog/IMG_2818.jpg" />
                             <div
                                 class="absolute inset-0 bg-linear-to-t from-black/80 via-black/20 to-transparent flex items-end p-md">
@@ -87,6 +88,7 @@
                             <img alt="Aksesoris"
                                 class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
                                 data-alt="A collection of premium local accessories, showcasing a handmade beaded bracelet with intricate details, placed on a natural textured surface with warm lighting, expressing elegance and authentic Indonesian craftsmanship."
+                                loading="lazy" decoding="async"
                                 src="/images/catalog/IMG_2810.jpg" />
                             <div
                                 class="absolute inset-0 bg-linear-to-t from-black/80 via-black/20 to-transparent flex items-end p-md">
@@ -101,6 +103,7 @@
                             <img alt="Pakaian"
                                 class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
                                 data-alt="A stylish modern Indonesian batik shirt with traditional motifs, showing high-quality fabric and elegant tailoring, blending traditional heritage with contemporary design."
+                                loading="lazy" decoding="async"
                                 src="/images/catalog/IMG_2821.jpg" />
                             <div
                                 class="absolute inset-0 bg-linear-to-t from-black/80 via-black/20 to-transparent flex items-end p-md">

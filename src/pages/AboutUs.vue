@@ -19,7 +19,7 @@ const waLink = () => createWhatsAppLink({ type: 'general', lang: currentLang.val
 <template>
   <div class="bg-surface text-on-surface min-h-screen pb-2xl">
     <section class="relative w-full h-[60vh] md:h-[80vh] bg-surface-container flex items-center justify-center overflow-hidden">
-      <img src="/images/about/about_hero.jpg" alt="Hero Background" class="absolute inset-0 w-full h-full object-cover opacity-70 mix-blend-overlay">
+      <img src="/images/about/about_hero.jpg" alt="Hero Background" loading="lazy" decoding="async" class="absolute inset-0 w-full h-full object-cover opacity-70 mix-blend-overlay">
       <div class="absolute inset-0 bg-black/50"></div>
       <div class="relative z-10 flex flex-col items-center text-center px-margin-mobile md:px-gutter max-w-200 gap-md">
         <h1 class="text-white font-headline-lg text-4xl md:text-6xl font-bold tracking-tight">Kisah di Balik KIOS PURWA</h1>
@@ -38,7 +38,7 @@ const waLink = () => createWhatsAppLink({ type: 'general', lang: currentLang.val
         </div>
         
         <div class="rounded-3xl overflow-hidden aspect-4/3 md:aspect-square bg-surface-container" data-aos="fade-left" data-aos-delay="150">
-          <img src="/images/about/about_story.jpg" alt="Tas dan Kerajinan Bali" class="w-full h-full object-cover">
+          <img src="/images/about/about_story.jpg" alt="Tas dan Kerajinan Bali" loading="lazy" decoding="async" class="w-full h-full object-cover">
         </div>
       </section>
       <section class="flex flex-col gap-xl bg-surface-bright rounded-[40px] p-lg md:p-2xl">
@@ -48,27 +48,27 @@ const waLink = () => createWhatsAppLink({ type: 'general', lang: currentLang.val
         </div>
         <div class="grid grid-cols-1 md:grid-cols-2 gap-md md:h-150 mt-md">
           <div class="relative rounded-3xl overflow-hidden group aspect-16/10 sm:aspect-video md:h-full md:aspect-auto bg-surface-container">
-            <img src="/images/catalog/web/web/IMG_8613.jpg" alt="Bahan Alam Pilihan" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
+            <img src="/images/catalog/web/web/IMG_8613.jpg" alt="Bahan Alam Pilihan" loading="lazy" decoding="async" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
             <div class="absolute inset-0 bg-linear-to-t from-black/90 via-black/40 to-transparent flex flex-col justify-end p-6">
               <span class="text-white font-label-lg text-lg md:text-2xl font-bold">01. Bahan Alam Pilihan</span>
             </div>
           </div>
           <div class="flex flex-col gap-md md:gap-lg h-full">
             <div class="relative rounded-3xl overflow-hidden group aspect-16/10 sm:aspect-video md:h-auto md:flex-1 md:aspect-auto bg-surface-container">
-              <img src="/images/catalog/web/web/IMG_8569.jpg" alt="Sentuhan Ukiran Manual" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
+              <img src="/images/catalog/web/web/IMG_8569.jpg" alt="Sentuhan Ukiran Manual" loading="lazy" decoding="async" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
               <div class="absolute inset-0 bg-linear-to-t from-black/90 via-black/40 to-transparent flex flex-col justify-end p-5 sm:p-6">
                 <span class="text-white font-label-lg text-lg md:text-2xl font-bold">02. Sentuhan Ukiran Manual</span>
               </div>
             </div>
             <div class="grid grid-cols-2 gap-md flex-1">
               <div class="relative rounded-3xl overflow-hidden group aspect-square md:aspect-auto bg-surface-container">
-                <img src="/images/catalog/web/web/IMG_8637.jpg" alt="Inlay Kerang" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
+                <img src="/images/catalog/web/web/IMG_8637.jpg" alt="Inlay Kerang" loading="lazy" decoding="async" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
                 <div class="absolute inset-0 bg-linear-to-t from-black/90 via-black/40 to-transparent flex flex-col justify-end p-3.5 sm:p-5">
                   <span class="text-white font-label-md font-bold text-md md:text-xl">03. Inlay Kerang</span>
                 </div>
               </div>
               <div class="relative rounded-3xl overflow-hidden group aspect-square md:aspect-auto bg-surface-container">
-                <img src="/images/catalog/web/web/IMG_8641.jpg" alt="Siap Untuk Anda" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
+                <img src="/images/catalog/web/web/IMG_8641.jpg" alt="Siap Untuk Anda" loading="lazy" decoding="async" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
                 <div class="absolute inset-0 bg-linear-to-t from-black/90 via-black/40 to-transparent flex flex-col justify-end p-3.5 sm:p-5">
                   <span class="text-white font-label-md font-bold text-md md:text-xl">04. Siap Untuk Anda</span>
                 </div>

@@ -363,7 +363,7 @@ watch(currentPage, () => { window.scrollTo({ top: 0, behavior: 'smooth' }); });
                                 class="group bg-surface-container-low rounded-xl overflow-hidden transition-all hover:shadow-lg border border-transparent hover:border-outline-variant flex flex-col h-full">
                                 <div class="aspect-square relative overflow-hidden bg-surface-container-highest">
                                     <img class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
-                                        :src="product.image" :alt="product.title" />
+                                        :src="product.image" :alt="product.title" loading="lazy" decoding="async" />
                                     <span
                                         class="absolute top-2 left-2 bg-primary backdrop-blur-sm text-white text-[10px] sm:text-label-sm font-label-sm px-2 py-0.5 sm:px-3 sm:py-1 rounded-full">
                                         {{ translateCategory(product.category) }}
