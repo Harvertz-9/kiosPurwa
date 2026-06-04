@@ -10,6 +10,37 @@
   <link
     href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
     rel="stylesheet" />
+
+  <!--
+    PENTING: Script ini harus sinkronus dan berada di <head>, SEBELUM Google Translate dimuat.
+    Tujuannya: memastikan cookie googtrans sudah benar saat GT membacanya pertama kali.
+  -->
+  <script>
+    (function initLangCookie() {
+      try {
+        var savedLang = localStorage.getItem('kiosPurwa_lang'); // 'id', 'en', atau null
+        var h = location.hostname;
+        var past = 'Thu, 01 Jan 1970 00:00:00 GMT';
+        var exp = new Date();
+        exp.setFullYear(exp.getFullYear() + 1);
+        var expStr = exp.toUTCString();
+
+        // Langkah 1: Hapus SEMUA variasi cookie googtrans yang mungkin ada
+        // (dengan domain, tanpa domain, dengan dot-prefix) agar tidak ada konflik
+        document.cookie = 'googtrans=; path=/; expires=' + past;
+        document.cookie = 'googtrans=; path=/; domain=' + h + '; expires=' + past;
+        document.cookie = 'googtrans=; path=/; domain=.' + h + '; expires=' + past;
+
+        // Langkah 2: Set cookie baru HANYA jika user mau Bahasa Inggris
+        // Untuk Indonesia: tidak perlu cookie (GT default ke bahasa asli halaman = id)
+        if (savedLang === 'en') {
+          document.cookie = 'googtrans=/id/en; path=/; expires=' + expStr;
+        }
+      } catch (e) {
+        // Silent fail — jangan crash jika localStorage atau cookie tidak tersedia
+      }
+    })();
+  </script>
 </head>
 
 <body>
@@ -22,20 +53,26 @@
 
   <script type="text/javascript">
     function googleTranslateElementInit() {
-      if (window.google && window.google.translate && document.getElementById('google_translate_element')) {
-        new google.translate.TranslateElement(
-          { pageLanguage: 'id', includedLanguages: 'id,en' },
-          'google_translate_element'
-        );
-      }
+      try {
+        if (window.google && window.google.translate && document.getElementById('google_translate_element')) {
+          new google.translate.TranslateElement(
+            {
+              pageLanguage: 'id',
+              includedLanguages: 'id,en',
+              autoDisplay: false
+            },
+            'google_translate_element'
+          );
+        }
+      } catch(e) {}
     }
-    // Load Google Translate script over HTTPS explicitly to avoid protocol-relative issues
+    // Muat Google Translate secara async (cookie sudah diset lebih dulu di <head>)
     (function loadGTranslate(){
       var s = document.createElement('script');
       s.type = 'text/javascript';
       s.src = 'https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit';
       s.async = true;
-      s.onerror = function(){ console.warn('Google Translate failed to load') };
+      s.onerror = function(){ console.warn('Google Translate gagal dimuat') };
       document.head.appendChild(s);
     })();
   </script>

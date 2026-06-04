@@ -157,45 +157,41 @@ const closeAll = () => {
 }
 
 const selectLanguage = (lang) => {
-    const target = lang === 'id' ? '/id/id' : `/id/${lang}`
-
-    // Save user's explicit choice to localStorage
+    // 1. Simpan pilihan eksplisit user ke localStorage
     try {
         localStorage.setItem('kiosPurwa_lang', lang)
     } catch (e) { /* ignore */ }
 
-    // Set cookie with expiry and explicit path/domain for wider coverage
+    // 2. Hapus SEMUA variasi cookie googtrans (tanpa domain, dengan domain, dengan dot-prefix)
+    //    Ini menghindari "ghost cookie" yang mungkin ditinggalkan oleh Google Translate
     try {
-            const expires = new Date()
-            expires.setFullYear(expires.getFullYear() + 1)
-            const hostname = location.hostname
-            const isLocalhost = hostname === 'localhost' || /^\d+\.\d+\.\d+\.\d+$/.test(hostname)
-            const cookieBase = `googtrans=${target}; path=/; expires=${expires.toUTCString()}`
-            document.cookie = isLocalhost ? cookieBase : cookieBase + `; domain=${hostname}`
+        const h = location.hostname
+        const past = 'Thu, 01 Jan 1970 00:00:00 GMT'
+        const exp = new Date()
+        exp.setFullYear(exp.getFullYear() + 1)
+        const expStr = exp.toUTCString()
+
+        document.cookie = `googtrans=; path=/; expires=${past}`
+        document.cookie = `googtrans=; path=/; domain=${h}; expires=${past}`
+        document.cookie = `googtrans=; path=/; domain=.${h}; expires=${past}`
+
+        // 3. Set cookie baru HANYA jika user memilih Bahasa Inggris
+        //    Untuk Indonesia: biarkan tanpa cookie (GT default ke bahasa asli halaman = id)
+        if (lang === 'en') {
+            document.cookie = `googtrans=/id/en; path=/; expires=${expStr}`
+        }
     } catch (e) {
-        // Fallback minimal cookie
-        document.cookie = `googtrans=${target}; path=/`
+        // Fallback tanpa domain
+        if (lang === 'en') {
+            document.cookie = 'googtrans=/id/en; path=/'
+        }
     }
 
     currentLanguage.value = lang
     isLangMenuOpen.value = false
     isMobileMenuOpen.value = false
 
-    // Try to reinitialize Google Translate widget if already loaded
-    try {
-        if (window.google && window.google.translate && typeof googleTranslateElementInit === 'function') {
-            // Call the global init to re-instantiate the widget
-            googleTranslateElementInit()
-            console.log('Google Translate reinitialized after language change to', lang)
-            // Some cases still require a reload to fetch translated resources
-            setTimeout(() => window.location.reload(), 500)
-            return
-        }
-    } catch (err) {
-        console.warn('Error reinitializing Google Translate:', err)
-    }
-
-    // If translate not available, reload to let the element init run on page load
+    // 4. Reload halaman — cookie sudah benar, GT akan membacanya saat init
     window.location.reload()
 }
 </script>
