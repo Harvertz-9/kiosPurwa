@@ -285,7 +285,7 @@ watch(currentPage, () => { window.scrollTo({ top: 0, behavior: 'smooth' }); });
                             </div>
 
                             <!-- Harga / Price Filter: Mobile Dropdown -->
-                            <div ref="priceDropdownRef" class="relative lg:hidden w-full pt-md border-t border-outline-variant">
+                            <!-- <div ref="priceDropdownRef" class="relative lg:hidden w-full pt-md border-t border-outline-variant">
                                 <h3 class="font-label-md text-label-md text-on-surface uppercase tracking-wider mb-xs">
                                     {{ t.priceLabel }}
                                 </h3>
@@ -305,8 +305,8 @@ watch(currentPage, () => { window.scrollTo({ top: 0, behavior: 'smooth' }); });
                                     </span>
                                 </button>
 
-                                <!-- Price Dropdown Menu -->
-                                <Transition
+                                 Price Dropdown Menu -->
+                                <!-- <Transition
                                     enter-active-class="transition duration-100 ease-out"
                                     enter-from-class="transform scale-95 opacity-0"
                                     enter-to-class="transform scale-100 opacity-100"
@@ -335,10 +335,10 @@ watch(currentPage, () => { window.scrollTo({ top: 0, behavior: 'smooth' }); });
                                         </div>
                                     </div>
                                 </Transition>
-                            </div>
+                            </div> --> 
 
                             <!-- Harga / Price Filter: Desktop List -->
-                            <div class="hidden lg:block pt-md border-t border-outline-variant">
+                            <!-- <div class="hidden lg:block pt-md border-t border-outline-variant">
                                 <h3 class="font-label-md text-label-md text-on-surface uppercase tracking-wider mb-sm">
                                     {{ t.priceLabel }}
                                 </h3>
@@ -357,7 +357,7 @@ watch(currentPage, () => { window.scrollTo({ top: 0, behavior: 'smooth' }); });
                                         <span class="group-hover:text-primary transition-colors text-on-surface-variant">{{ range.label }}</span>
                                     </label>
                                 </div>
-                            </div>
+                            </div> -->
 
                         </div>
                     </div>
