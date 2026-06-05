@@ -86,7 +86,7 @@
                     <div
                         class="bg-surface-container-lowest p-md rounded-lg shadow-[0_2px_10px_rgba(81,99,78,0.03)] border border-outline-variant/20">
                         <h4 class="font-headline-md text-headline-md text-primary text-[18px] mb-base">Metode pembayaran apa yang tersedia?</h4>
-                        <p class="font-body-md text-body-md text-on-surface-variant">Kami menerima transfer bank antar bank lokal serta dompet digital utama seperti GoPay dan OVO untuk kenyamanan Anda.</p>
+                        <p class="font-body-md text-body-md text-on-surface-variant">Kami menerima transfer bank antar bank lokal serta dompet digital untuk kenyamanan Anda.</p>
                     </div>
                     <div
                         class="bg-surface-container-lowest p-md rounded-lg shadow-[0_2px_10px_rgba(81,99,78,0.03)] border border-outline-variant/20">
