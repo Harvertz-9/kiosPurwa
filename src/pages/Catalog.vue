@@ -214,7 +214,7 @@ watch(currentPage, () => { window.scrollTo({ top: 0, behavior: 'smooth' }); });
 
         <main class="mx-auto px-margin-mobile md:px-gutter py-md max-w-360 pt-16">
             <div class="flex flex-col lg:flex-row gap-lg">
-                <aside class="w-full lg:w-64 shrink-0">
+                <aside class="w-full lg:w-64 shrink-0" data-aos="fade-right">
                     <div class="lg:sticky lg:top-24 space-y-md">
                         <div class="flex flex-col gap-md">
 
@@ -363,7 +363,7 @@ watch(currentPage, () => { window.scrollTo({ top: 0, behavior: 'smooth' }); });
                     </div>
                 </aside>
 
-                <div class="grow min-w-0">
+                <div class="grow min-w-0" data-aos="fade-left">
                     <div v-if="filteredProducts.length === 0" class="flex flex-col items-center justify-center text-on-surface-variant py-2xl font-body-lg gap-4 bg-surface-container-low rounded-xl border border-dashed border-outline-variant">
                         <span class="material-symbols-outlined text-4xl text-outline">inventory_2</span>
                         {{ t.emptyState }}

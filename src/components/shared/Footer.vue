@@ -40,7 +40,7 @@ const goToPage = (path) => {
             </div>
 
             <!-- Kolom 2: Link Navigasi -->
-            <div class="grid grid-cols-1 sm:grid-cols-2 gap-lg md:gap-xl w-full lg:w-1/3">
+            <div class="grid grid-cols-2 gap-lg md:gap-xl w-full lg:w-1/3">
                 <div class="space-y-sm">
                     <h5
                         class="text-body-md text-on-secondary-container font-bold uppercase tracking-wider">

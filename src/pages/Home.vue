@@ -1,4 +1,33 @@
 <script setup>
+import { ref } from 'vue';
+
+const activeIndex = ref(0);
+const scrollContainer = ref(null);
+
+const onScroll = (event) => {
+    const container = event.target;
+    const scrollLeft = container.scrollLeft;
+    const maxScroll = container.scrollWidth - container.clientWidth;
+    if (maxScroll > 0) {
+        activeIndex.value = Math.min(2, Math.max(0, Math.round((scrollLeft / maxScroll) * 2)));
+    } else {
+        activeIndex.value = 0;
+    }
+};
+
+const scrollTo = (index) => {
+    if (scrollContainer.value) {
+        const container = scrollContainer.value;
+        const items = container.children;
+        if (items[index]) {
+            items[index].scrollIntoView({
+                behavior: 'smooth',
+                block: 'nearest',
+                inline: 'center'
+            });
+        }
+    }
+};
 </script>
 
 <template>
@@ -8,7 +37,7 @@
         <main>
             <section class="w-full pt-lg pb-xl px-margin-mobile md:px-gutter max-w-360 mx-auto">
                 <div class="flex flex-col lg:flex-row items-center gap-lg">
-                    <div class="w-full lg:w-1/2 space-y-md text-center lg:text-left order-2 lg:order-1">
+                    <div class="w-full lg:w-1/2 space-y-md text-center lg:text-left order-2 lg:order-1" data-aos="fade-up">
                         <span
                             class="inline-block px-3 py-1 rounded-full bg-secondary-fixed text-on-secondary-fixed-variant font-label-sm text-label-sm">Pendukung Produk Lokal</span>
                         <h1
@@ -33,7 +62,7 @@
                             </router-link>
                         </div>
                     </div>
-                    <div class="w-full lg:w-1/2 relative order-1 lg:order-2">
+                    <div class="w-full lg:w-1/2 relative order-1 lg:order-2" data-aos="fade-left" data-aos-delay="100">
                         <div
                             class="aspect-4/3 md:aspect-square rounded-3xl overflow-hidden bg-surface-container-high shadow-lg">
                             <img alt="Digital Craftsmanship Hero" class="w-full h-full object-cover"
@@ -55,7 +84,7 @@
             <section class="bg-surface-container-low py-xl">
                 <div class="px-margin-mobile md:px-gutter max-w-360 mx-auto">
                     <div
-                        class="flex flex-col sm:flex-row justify-between items-start sm:items-end mb-lg gap-sm">
+                        class="flex flex-col sm:flex-row justify-between items-start sm:items-end mb-lg gap-sm" data-aos="fade-up">
                         <div class="space-y-xs">
                             <h2 class="font-headline-lg text-headline-lg text-on-surface">Kategori Unggulan</h2>
                             <p class="text-on-surface-variant font-body-md text-body-md">Temukan produk terbaik hasil kurasi teliti.</p>
@@ -67,9 +96,13 @@
                         </button>
                         </router-link>
                     </div>
-                    <div class="flex overflow-x-auto snap-x snap-mandatory gap-md pb-4 -mx-margin-mobile px-margin-mobile sm:grid sm:grid-cols-2 lg:grid-cols-3 sm:overflow-x-visible sm:px-0 sm:mx-0 scrollbar-width:none [&::-webkit-scrollbar]:hidden">
+                    <div
+                        ref="scrollContainer"
+                        @scroll="onScroll"
+                        class="flex overflow-x-auto snap-x snap-mandatory gap-md pb-4 -mx-margin-mobile px-margin-mobile sm:grid sm:grid-cols-2 lg:grid-cols-3 sm:overflow-x-visible sm:px-0 sm:mx-0 scrollbar-width:none [&::-webkit-scrollbar]:hidden"
+                    >
                         <div
-                            class="group relative w-[80vw] sm:w-auto shrink-0 snap-center aspect-4/5 rounded-3xl overflow-hidden bg-surface-container cursor-pointer transition-transform duration-300 hover:-translate-y-2">
+                            class="group relative w-[80vw] sm:w-auto shrink-0 snap-center aspect-4/5 rounded-3xl overflow-hidden bg-surface-container cursor-pointer transition-transform duration-300 hover:-translate-y-2" data-aos="fade-up" data-aos-delay="100">
                             <img alt="Kerajinan"
                                 class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
                                 data-alt="A beautiful handmade woven rattan bag, featuring intricate natural patterns and classic design, reflecting high-quality local craftsmanship."
@@ -84,7 +117,7 @@
                             </div>
                         </div>
                         <div
-                            class="group relative w-[80vw] sm:w-auto shrink-0 snap-center aspect-4/5 rounded-3xl overflow-hidden bg-surface-container cursor-pointer transition-transform duration-300 hover:-translate-y-2">
+                            class="group relative w-[80vw] sm:w-auto shrink-0 snap-center aspect-4/5 rounded-3xl overflow-hidden bg-surface-container cursor-pointer transition-transform duration-300 hover:-translate-y-2" data-aos="fade-up" data-aos-delay="200">
                             <img alt="Aksesoris"
                                 class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
                                 data-alt="A collection of premium local accessories, showcasing a handmade beaded bracelet with intricate details, placed on a natural textured surface with warm lighting, expressing elegance and authentic Indonesian craftsmanship."
@@ -99,7 +132,7 @@
                             </div>
                         </div>
                         <div
-                            class="group relative w-[80vw] sm:w-auto shrink-0 snap-center aspect-4/5 rounded-3xl overflow-hidden bg-surface-container cursor-pointer transition-transform duration-300 hover:-translate-y-2 sm:col-span-2 lg:col-span-1">
+                            class="group relative w-[80vw] sm:w-auto shrink-0 snap-center aspect-4/5 rounded-3xl overflow-hidden bg-surface-container cursor-pointer transition-transform duration-300 hover:-translate-y-2 sm:col-span-2 lg:col-span-1" data-aos="fade-up" data-aos-delay="300">
                             <img alt="Pakaian"
                                 class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
                                 data-alt="A stylish modern Indonesian batik shirt with traditional motifs, showing high-quality fabric and elegant tailoring, blending traditional heritage with contemporary design."
@@ -114,12 +147,23 @@
                             </div>
                         </div>
                     </div>
+                    <!-- Pagination Dots (Mobile Only) -->
+                    <div class="flex sm:hidden justify-center items-center gap-2 mt-2">
+                        <button
+                            v-for="i in 3"
+                            :key="i"
+                            @click="scrollTo(i - 1)"
+                            class="h-2 rounded-full transition-all duration-300 cursor-pointer"
+                            :class="activeIndex === i - 1 ? 'w-6 bg-primary' : 'w-2 bg-on-surface-variant/20 hover:bg-on-surface-variant/40'"
+                            :aria-label="'Go to category ' + i"
+                        ></button>
+                    </div>
                 </div>
             </section>
             <section class="py-xl">
                 <div class="px-margin-mobile md:px-gutter max-w-360 mx-auto">
                     <div
-                        class="bg-primary-container/10 md:bg-primary-container/20 rounded-4xl md:rounded-[40px] p-md md:p-xl flex flex-col lg:flex-row items-center gap-lg">
+                        class="bg-primary-container/10 md:bg-primary-container/20 rounded-4xl md:rounded-[40px] p-md md:p-xl flex flex-col lg:flex-row items-center gap-lg" data-aos="fade-up">
                         <div class="w-full lg:w-1/2">
                             <h2
                                 class="font-headline-lg text-headline-lg text-primary mb-md text-center lg:text-left">
@@ -189,7 +233,7 @@
             </section>
             <section class="py-xl">
                 <div class="px-margin-mobile md:px-gutter max-w-360 mx-auto">
-                    <div class="flex flex-col lg:flex-row gap-lg items-stretch">
+                    <div class="flex flex-col lg:flex-row gap-lg items-stretch" data-aos="fade-up">
                         <div class="w-full lg:w-1/2 space-y-md flex flex-col justify-center order-2 lg:order-1">
                             <div class="space-y-xs text-center lg:text-left">
                                 <h2 class="font-headline-lg text-headline-lg text-on-surface">Lokasi Kami</h2>

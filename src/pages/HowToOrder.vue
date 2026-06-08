@@ -6,7 +6,7 @@
     <div class="font-body-md text-body-md selection:bg-primary-fixed selection:text-on-primary-fixed">
 
         <main class="max-w-container-max mx-auto px-margin-mobile md:px-gutter py-xl">
-            <section class="mb-xl text-center">
+            <section class="mb-xl text-center" data-aos="fade-up">
                 <h1 class="font-headline-xl text-headline-xl text-on-surface mb-md">Langkah Mudah Berbelanja</h1>
                 <p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl mx-auto">
                     Nikmati kemudahan berbelanja produk lokal pilihan dengan sentuhan personal melalui layanan WhatsApp kami.
@@ -14,7 +14,7 @@
             </section>
             <section class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-gutter mb-xl">
                 <div
-                    class="bg-secondary-container p-md rounded-xl flex flex-col items-center text-center group transition-transform duration-200 active:scale-95">
+                    class="bg-secondary-container p-md rounded-xl flex flex-col items-center text-center group transition-transform duration-200 active:scale-95" data-aos="fade-up" data-aos-delay="100">
                     <div
                         class="w-16 h-16 bg-surface-container-lowest rounded-full flex items-center justify-center mb-md shadow-sm">
                         <span class="material-symbols-outlined text-primary text-3xl" data-icon="search">search</span>
@@ -25,7 +25,7 @@
                     </p>
                 </div>
                 <div
-                    class="bg-surface-container-high p-md rounded-xl flex flex-col items-center text-center group transition-transform duration-200 active:scale-95">
+                    class="bg-surface-container-high p-md rounded-xl flex flex-col items-center text-center group transition-transform duration-200 active:scale-95" data-aos="fade-up" data-aos-delay="200">
                     <div
                         class="w-16 h-16 bg-surface-container-lowest rounded-full flex items-center justify-center mb-md shadow-sm">
                         <span class="material-symbols-outlined text-primary text-3xl" data-icon="chat">chat</span>
@@ -36,7 +36,7 @@
                     </p>
                 </div>
                 <div
-                    class="bg-secondary-container p-md rounded-xl flex flex-col items-center text-center group transition-transform duration-200 active:scale-95">
+                    class="bg-secondary-container p-md rounded-xl flex flex-col items-center text-center group transition-transform duration-200 active:scale-95" data-aos="fade-up" data-aos-delay="300">
                     <div
                         class="w-16 h-16 bg-surface-container-lowest rounded-full flex items-center justify-center mb-md shadow-sm">
                         <span class="material-symbols-outlined text-primary text-3xl"
@@ -49,7 +49,7 @@
                 </div>
                 <!-- Step 4 -->
                 <div
-                    class="bg-surface-container-high p-md rounded-xl flex flex-col items-center text-center group transition-transform duration-200 active:scale-95">
+                    class="bg-surface-container-high p-md rounded-xl flex flex-col items-center text-center group transition-transform duration-200 active:scale-95" data-aos="fade-up" data-aos-delay="400">
                     <div
                         class="w-16 h-16 bg-surface-container-lowest rounded-full flex items-center justify-center mb-md shadow-sm">
                         <span class="material-symbols-outlined text-primary text-3xl"
@@ -61,7 +61,7 @@
                     </p>
                 </div>
             </section>
-            <section class="mb-xl">
+            <section class="mb-xl" data-aos="fade-up">
                 <div class="flex flex-col lg:relative w-full lg:h-100 rounded-3xl overflow-hidden shadow-sm bg-surface-container-low border border-outline-variant/30">
                     <img class="w-full h-48 sm:h-64 lg:h-full lg:absolute lg:inset-0 object-cover"
                         data-alt="A warm and inviting customer service scene where a local artisan is smiling while interacting with a smartphone."
@@ -75,7 +75,7 @@
                     </div>
                 </div>
             </section>
-            <section class="bg-surface-container-low rounded-xl p-lg">
+            <section class="bg-surface-container-low rounded-xl p-lg" data-aos="fade-up">
                 <h2 class="font-headline-lg text-headline-lg text-on-surface mb-lg text-center">Pertanyaan yang Sering Diajukan</h2>
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-md">
                     <div
