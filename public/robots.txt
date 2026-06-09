@@ -1,0 +1,22 @@
+# Robots.txt for Kios Purwa
+# Diizinkan untuk semua crawler
+
+User-agent: *
+Allow: /
+Disallow: 
+
+# Sitemap
+Sitemap: https://kiospurwa.net
+
+# Crawl-delay untuk performance
+Crawl-delay: 1
+
+# Specific rules untuk Google
+User-agent: Googlebot
+Allow: /
+Crawl-delay: 0
+
+# Specific rules untuk Bing
+User-agent: Bingbot
+Allow: /
+Crawl-delay: 1

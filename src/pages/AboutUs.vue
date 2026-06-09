@@ -5,12 +5,12 @@ import { createWhatsAppLink } from '@/utils/whatsapp.js';
 const currentLang = ref('id');
 
 onMounted(() => {
-    const goog = document.cookie.match(/(^| )googtrans=([^;]+)/);
-    if (goog) {
-        const parts = goog[2].split('/');
-        const lang = parts[2];
-        currentLang.value = ['id', 'en'].includes(lang) ? lang : 'id';
-    }
+  const goog = document.cookie.match(/(^| )googtrans=([^;]+)/);
+  if (goog) {
+    const parts = goog[2].split('/');
+    const lang = parts[2];
+    currentLang.value = ['id', 'en'].includes(lang) ? lang : 'id';
+  }
 });
 
 const waLink = () => createWhatsAppLink({ type: 'general', lang: currentLang.value });
