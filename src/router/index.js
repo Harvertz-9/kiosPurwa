@@ -1,4 +1,4 @@
-import { createRouter, createWebHistory } from 'vue-router'
+import { createRouter, createWebHashHistory } from 'vue-router'
 
 const Home = () => import('@/pages/Home.vue')
 const Catalog = () => import('@/pages/Catalog.vue')
@@ -25,7 +25,7 @@ const routes = [
 ]
 
 const router = createRouter({
-  history: createWebHistory(),
+  history: createWebHashHistory(),
   routes,
   // Setiap navigasi selalu scroll ke atas halaman
   scrollBehavior() {
