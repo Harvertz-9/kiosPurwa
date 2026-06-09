@@ -27,13 +27,12 @@ const waLink = () => createWhatsAppLink({ type: 'general', lang: currentLang.val
       </div>
     </section>
     <div class="px-margin-mobile md:px-gutter max-w-360 mx-auto pt-xl md:pt-2xl flex flex-col gap-2xl md:gap-30">
-      <section class="grid grid-cols-1 md:grid-cols-2 gap-xl md:gap-2xl items-center">
-        <div class="flex flex-col gap-md md:gap-lg md:pr-xl" data-aos="fade-up">
+      <section class="grid grid-cols-1 md:grid-cols-2 gap-xl md:gap-xl items-center">
+        <div class="flex flex-col gap-md md:gap-lg" data-aos="fade-up">
           <span class="text-primary font-label-md tracking-widest uppercase">TENTANG KAMI</span>
-          <h2 class="font-headline-lg text-3xl md:text-5xl text-on-surface font-bold leading-tight">Kesenian yang Berakar pada Komunitas</h2>
+          <h2 class="font-headline-lg text-3xl md:text-4xl text-on-surface font-bold leading-tight">Kesenian yang Berakar pada Komunitas</h2>
           <div class="font-body-md text-on-surface-variant flex flex-col gap-md text-base md:text-lg leading-relaxed mt-sm">
-            <p>Kios Purwa merupakan UMKM lokal yang berlokasi di Pasar Seni Sukawati yang menghadirkan berbagai produk khas Bali dengan sentuhan seni dan budaya tradisional. Kami menyediakan beragam pilihan tas handmade, pakaian khas Bali, hingga pernak-pernik dan kerajinan unik yang cocok digunakan sehari-hari maupun sebagai oleh-oleh khas Bali.</p>
-            <p>Dengan mengutamakan kualitas produk, harga yang terjangkau, serta pelayanan yang ramah, Kios Purwa berkomitmen untuk membantu melestarikan karya seni lokal sekaligus memperkenalkan keindahan budaya Bali kepada masyarakat dan wisatawan. Kami percaya bahwa setiap produk memiliki nilai seni dan cerita yang mencerminkan kekayaan budaya Pulau Dewata.</p>
+            <p class="text-justify">Kios Purwa merupakan UMKM lokal yang berlokasi di Pasar Seni Sukawati yang menghadirkan berbagai produk khas Bali dengan sentuhan seni dan budaya tradisional. Kami menyediakan beragam pilihan tas handmade, pakaian khas Bali, hingga pernak-pernik dan kerajinan unik yang cocok digunakan sehari-hari maupun sebagai oleh-oleh khas Bali.</p>
           </div>
         </div>
         
@@ -46,26 +45,26 @@ const waLink = () => createWhatsAppLink({ type: 'general', lang: currentLang.val
           <h2 class="font-headline-lg text-3xl md:text-4xl text-on-surface font-bold">Proses Kreatif Kami</h2>
           <p class="font-body-md text-on-surface-variant text-lg">Dari bahan mentah hingga menjadi karya seni di rumah Anda.</p>
         </div>
-        <div class="grid grid-cols-1 md:grid-cols-4 md:grid-rows-2 gap-md md:h-150 mt-md">
-          <div class="relative rounded-3xl overflow-hidden group aspect-16/10 sm:aspect-video md:h-full md:aspect-auto bg-surface-container md:col-span-2 md:row-span-2">
+        <div class="grid grid-cols-1 lg:grid-cols-4 lg:grid-rows-2 gap-md lg:h-150 mt-md">
+          <div class="relative rounded-3xl overflow-hidden group aspect-16/10 sm:aspect-video lg:h-full lg:aspect-auto bg-surface-container lg:col-span-2 lg:row-span-2">
             <img src="/images/catalog/web/web/IMG_8613.jpg" alt="Bahan Alam Pilihan" loading="lazy" decoding="async" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
             <div class="absolute inset-0 bg-linear-to-t from-black/90 via-black/40 to-transparent flex flex-col justify-end p-6">
               <span class="text-white font-label-lg text-lg md:text-2xl font-bold">01. Bahan Alam Pilihan</span>
             </div>
           </div>
-          <div class="relative rounded-3xl overflow-hidden group aspect-16/10 sm:aspect-video md:h-full md:aspect-auto bg-surface-container md:col-span-2 md:row-span-1">
+          <div class="relative rounded-3xl overflow-hidden group aspect-16/10 sm:aspect-video lg:h-full lg:aspect-auto bg-surface-container lg:col-span-2 lg:row-span-1">
             <img src="/images/catalog/web/web/IMG_8569.jpg" alt="Sentuhan Ukiran Manual" loading="lazy" decoding="async" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
             <div class="absolute inset-0 bg-linear-to-t from-black/90 via-black/40 to-transparent flex flex-col justify-end p-5 sm:p-6">
               <span class="text-white font-label-lg text-lg md:text-2xl font-bold">02. Sentuhan Ukiran Manual</span>
             </div>
           </div>
-          <div class="relative rounded-3xl overflow-hidden group aspect-16/10 sm:aspect-video md:h-full md:aspect-auto bg-surface-container md:col-span-1 md:row-span-1">
+          <div class="relative rounded-3xl overflow-hidden group aspect-16/10 sm:aspect-video lg:h-full lg:aspect-auto bg-surface-container lg:col-span-1 lg:row-span-1">
             <img src="/images/catalog/web/web/IMG_8637.jpg" alt="Inlay Kerang" loading="lazy" decoding="async" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
             <div class="absolute inset-0 bg-linear-to-t from-black/90 via-black/40 to-transparent flex flex-col justify-end p-3.5 sm:p-5">
               <span class="text-white font-label-md font-bold text-md md:text-xl">03. Inlay Kerang</span>
             </div>
           </div>
-          <div class="relative rounded-3xl overflow-hidden group aspect-16/10 sm:aspect-video md:h-full md:aspect-auto bg-surface-container md:col-span-1 md:row-span-1">
+          <div class="relative rounded-3xl overflow-hidden group aspect-16/10 sm:aspect-video lg:h-full lg:aspect-auto bg-surface-container lg:col-span-1 lg:row-span-1">
             <img src="/images/catalog/web/web/IMG_8641.jpg" alt="Siap Untuk Anda" loading="lazy" decoding="async" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
             <div class="absolute inset-0 bg-linear-to-t from-black/90 via-black/40 to-transparent flex flex-col justify-end p-3.5 sm:p-5">
               <span class="text-white font-label-md font-bold text-md md:text-xl">04. Siap Untuk Anda</span>
@@ -73,20 +72,20 @@ const waLink = () => createWhatsAppLink({ type: 'general', lang: currentLang.val
           </div>
         </div>
       </section>
-      <section class="flex flex-col gap-xl mt-lg md:mt-90" data-aos="fade-up">
+      <section class="flex flex-col gap-xl mt-lg" data-aos="fade-up">
         <h2 class="font-headline-lg text-3xl md:text-4xl text-on-surface font-bold text-center mb-md">Dampak Nyata Bersama Anda</h2>
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-md md:gap-xl">
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-md md:gap-md">
           <div class="bg-surface-container rounded-3xl p-xl flex flex-col items-center justify-center text-center gap-sm aspect-video md:aspect-square" data-aos="fade-up" data-aos-delay="100">
             <span class="material-symbols-outlined text-[48px] text-primary">group</span>
             <div class="font-display-md text-5xl font-bold text-on-surface">50+</div>
             <div class="font-label-md text-on-surface-variant">Pengrajin Lokal Didukung</div>
           </div>
-          <div class="bg-surface-container rounded-3xl p-xl flex flex-col items-center justify-center text-center gap-sm aspect-video md:aspect-square" data-aos="fade-up" data-aos-delay="200">
+          <div class="bg-surface-container rounded-3xl p-xl flex flex-col items-center justify-center text-center gap-sm aspect-video md:aspect-square" data-aos="fade-up" data-aos-delay="150">
             <span class="material-symbols-outlined text-[48px] text-primary">eco</span>
             <div class="font-display-md text-5xl font-bold text-on-surface">100%</div>
-            <div class="font-label-md text-on-surface-variant">Bahan Ramah Lingkungan</div>
+            <div class="font-label-md text-on-surface-variant">Bahan yang Ramah Lingkungan</div>
           </div>
-          <div class="bg-surface-container rounded-3xl p-xl flex flex-col items-center justify-center text-center gap-sm aspect-video md:aspect-square" data-aos="fade-up" data-aos-delay="300">
+          <div class="bg-surface-container rounded-3xl p-xl flex flex-col items-center justify-center text-center gap-sm aspect-video md:aspect-square" data-aos="fade-up" data-aos-delay="200">
             <span class="material-symbols-outlined text-[48px] text-primary">local_mall</span>
             <div class="font-display-md text-5xl font-bold text-on-surface">100+</div>
             <div class="font-label-md text-on-surface-variant">Produk Terkurasi Terjual</div>
@@ -124,7 +123,7 @@ const waLink = () => createWhatsAppLink({ type: 'general', lang: currentLang.val
             class="w-full h-full object-cover">
           </iframe>
         </div>
-        <div class="flex flex-col gap-lg p-md md:p-2xl md:pr-3xl">
+        <div class="flex flex-col gap-md p-md md:p-2xl md:pr-3xl">
           <h2 class="font-headline-lg text-3xl font-bold text-on-surface">Lokasi Kami</h2>
           <p class="font-body-md text-on-surface-variant text-lg">
             Kunjungi pusat kreasi kami untuk melihat langsung proses pembuatan dan koleksi lengkap produk UMKM terbaik.

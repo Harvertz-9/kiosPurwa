@@ -62,16 +62,20 @@
                 </div>
             </section>
             <section class="mb-xl" data-aos="fade-up">
-                <div class="flex flex-col lg:relative w-full lg:h-100 rounded-3xl overflow-hidden shadow-sm bg-surface-container-low border border-outline-variant/30">
-                    <img class="w-full h-48 sm:h-64 lg:h-full lg:absolute lg:inset-0 object-cover"
-                        data-alt="A warm and inviting customer service scene where a local artisan is smiling while interacting with a smartphone."
-                        src="https://lh3.googleusercontent.com/aida-public/AB6AXuCCvfapEKVcL_nx9A3XKGChRrXgQs0ETG0w6yTHEmA35pt7B8G655i3X5-d5BUCUtYfzufAVje5hUSB7ZNKHglxMDcvRAz-VrjUgLE-rTA0E0J7JFr4vz3-o4mkq__EDV_Xow7Qz-TL4ZRbthk8_WrBnUEADwboErRGRSfWmPEQZ7THXrWFcM3jNQWMdT0qgLfHNNGxC5UhhqgCRNmv5iBKF4TBspDoZvb-L2KzgCp7YVhLb_SrLdqf3cAY6CdsGvnfW4JfxfoG-pFj" />
-                    <div
-                        class="w-full p-6 sm:p-8 lg:absolute lg:inset-0 lg:bg-linear-to-r lg:from-primary/40 lg:to-transparent lg:flex lg:items-center lg:px-lg">
-                        <div class="w-full lg:max-w-2xl bg-surface-bright lg:bg-surface/90 lg:backdrop-blur-sm p-md rounded-2xl lg:rounded-lg shadow-sm lg:shadow-none border border-outline-variant/10 lg:border-none">
-                            <h2 class="font-headline-lg text-headline-lg text-primary mb-sm">Pendekatan Personal</h2>
-                            <p class="font-body-md text-body-md text-on-surface-variant">Kami percaya setiap pesanan adalah awal dari silaturahmi. Chat dengan kami di WhatsApp untuk mendapatkan rekomendasi produk terbaik dan pengalaman belanja yang lebih hangat.</p>
-                        </div>
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-lg items-center bg-surface-container-low rounded-3xl overflow-hidden border border-outline-variant/30 p-md md:p-lg">
+                    <!-- Image Card -->
+                    <div class="w-full aspect-square md:aspect-4/3 lg:aspect-square rounded-2xl overflow-hidden bg-surface-container-high shadow-sm">
+                        <img class="w-full h-full object-cover"
+                            data-alt="A warm and inviting customer service scene where a local artisan is smiling while interacting with a smartphone."
+                            src="/images/about/personal_contact.png" />
+                    </div>
+                    <!-- Text Card -->
+                    <div class="flex flex-col justify-center gap-sm p-sm md:p-md lg:pr-lg">
+                        <span class="text-primary font-label-md tracking-widest uppercase">LAYANAN KAMI</span>
+                        <h2 class="font-headline-lg text-headline-lg text-primary">Pendekatan Personal</h2>
+                        <p class="font-body-md text-body-md text-on-surface-variant leading-relaxed">
+                            Kami percaya setiap pesanan adalah awal dari silaturahmi. Chat dengan kami di WhatsApp untuk mendapatkan rekomendasi produk terbaik dan pengalaman belanja yang lebih hangat.
+                        </p>
                     </div>
                 </div>
             </section>

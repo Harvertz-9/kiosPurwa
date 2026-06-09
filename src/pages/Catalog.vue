@@ -214,7 +214,7 @@ watch(currentPage, () => { window.scrollTo({ top: 0, behavior: 'smooth' }); });
 
         <main class="mx-auto px-margin-mobile md:px-gutter py-md max-w-360 pt-16">
             <div class="flex flex-col lg:flex-row gap-lg">
-                <aside class="w-full lg:w-64 shrink-0" data-aos="fade-right">
+                <aside class="w-full lg:w-64 shrink-0 relative z-30" data-aos="fade-right">
                     <div class="lg:sticky lg:top-24 space-y-md">
                         <div class="flex flex-col gap-md">
 
